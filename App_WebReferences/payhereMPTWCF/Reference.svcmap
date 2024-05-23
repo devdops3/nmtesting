@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="40f06e7e-e462-45e2-920d-166bcb71edcf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:53135/PINService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PINService.disco" MetadataType="Disco" ID="9214fce8-792c-4b43-a1f6-9e5217f62bb9" SourceId="1" SourceUrl="http://localhost:53135/PINService.svc?disco" />
+    <MetadataFile FileName="PINService.xsd" MetadataType="Schema" ID="197533aa-9a1b-4a8d-b0a9-1bd9e004a29a" SourceId="1" SourceUrl="http://localhost:53135/PINService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PINService.wsdl" MetadataType="Wsdl" ID="bfd5e254-5fe2-42f2-91b7-820a42c2e214" SourceId="1" SourceUrl="http://localhost:53135/PINService.svc?wsdl" />
+    <MetadataFile FileName="PINService1.xsd" MetadataType="Schema" ID="00dd0e4f-242c-42b7-af06-736e09ef4860" SourceId="1" SourceUrl="http://localhost:53135/PINService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

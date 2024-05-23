@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="MeterRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="metaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="legno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="billDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="securityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="townshipCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MeterRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MeterRequestResult" type="tns:MeterBillResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MeterBillResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BankID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Legno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecurityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TownshipCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillCharge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterChargeOnly" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterServiceCharge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Hosp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceCharge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankAccountNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MeterRequestObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="meterBillRequest" type="tns:MeterBillRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MeterBillRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BankID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Legno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecurityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TownshipCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MeterRequestObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MeterRequestObjResult" type="tns:MeterBillResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestATM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="metaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="legno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardHolderName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="billDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="securityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRequestATMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRequestATMResult" type="tns:MeterBillResponseATM" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MeterBillResponseATM">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BankID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Legno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecurityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TownshipCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillCharge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterChargeOnly" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterServiceCharge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Hosp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceCharge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRequestATMObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="meterBillRequest" type="tns:MeterBillRequestATM" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MeterBillRequestATM">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BankID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Legno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecurityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardHolderName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRequestATMObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRequestATMObjResult" type="tns:MeterBillResponseATM" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestPaid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="metaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="billDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="securityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="townshipCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="legno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="billCharge" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestPaidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestPaidResult" type="tns:PaidMeterBillResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PaidMeterBillResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BankID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecurityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OwnerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LEGNO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TownshipCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillCharge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterChargeOnly" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterServiceCharge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HOSP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceCharge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankAccountNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApprovalCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RequestPaidObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paidRequest" type="tns:PaidMeterBillRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PaidMeterBillRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BankID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Legno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecurityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TownshipCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillCharge" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RequestPaidObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RequestPaidObjResult" type="tns:PaidMeterBillResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PaidATM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="metaNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="billDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="securityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cardHolderName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transactionCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bankID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="legno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="billCharge" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PaidATMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PaidATMResult" type="tns:PaidMeterBillResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PaidATMObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paidRequest" type="tns:PaidMeterBillRequestATM" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PaidMeterBillRequestATM">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BankID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BankName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Legno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecurityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BillCharge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CardHolderName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PaidATMObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PaidATMObjResult" type="tns:PaidMeterBillResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MeterRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:MeterRequest" />
+  </wsdl:message>
+  <wsdl:message name="MeterRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:MeterRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="MeterRequestObjSoapIn">
+    <wsdl:part name="parameters" element="tns:MeterRequestObj" />
+  </wsdl:message>
+  <wsdl:message name="MeterRequestObjSoapOut">
+    <wsdl:part name="parameters" element="tns:MeterRequestObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestATMSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRequestATM" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestATMSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRequestATMResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestATMObjSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRequestATMObj" />
+  </wsdl:message>
+  <wsdl:message name="GetRequestATMObjSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRequestATMObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestPaidSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestPaid" />
+  </wsdl:message>
+  <wsdl:message name="RequestPaidSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestPaidResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestPaidObjSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestPaidObj" />
+  </wsdl:message>
+  <wsdl:message name="RequestPaidObjSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestPaidObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="PaidATMSoapIn">
+    <wsdl:part name="parameters" element="tns:PaidATM" />
+  </wsdl:message>
+  <wsdl:message name="PaidATMSoapOut">
+    <wsdl:part name="parameters" element="tns:PaidATMResponse" />
+  </wsdl:message>
+  <wsdl:message name="PaidATMObjSoapIn">
+    <wsdl:part name="parameters" element="tns:PaidATMObj" />
+  </wsdl:message>
+  <wsdl:message name="PaidATMObjSoapOut">
+    <wsdl:part name="parameters" element="tns:PaidATMObjResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MeterBillServiceToBankSoap">
+    <wsdl:operation name="GetMeterBill">
+      <wsdl:input name="MeterRequest" message="tns:MeterRequestSoapIn" />
+      <wsdl:output name="MeterRequest" message="tns:MeterRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeterBill">
+      <wsdl:input name="MeterRequestObj" message="tns:MeterRequestObjSoapIn" />
+      <wsdl:output name="MeterRequestObj" message="tns:MeterRequestObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeterBillATM">
+      <wsdl:input name="GetRequestATM" message="tns:GetRequestATMSoapIn" />
+      <wsdl:output name="GetRequestATM" message="tns:GetRequestATMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMeterBillATM">
+      <wsdl:input name="GetRequestATMObj" message="tns:GetRequestATMObjSoapIn" />
+      <wsdl:output name="GetRequestATMObj" message="tns:GetRequestATMObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PaidMeterBill">
+      <wsdl:input name="RequestPaid" message="tns:RequestPaidSoapIn" />
+      <wsdl:output name="RequestPaid" message="tns:RequestPaidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PaidMeterBill">
+      <wsdl:input name="RequestPaidObj" message="tns:RequestPaidObjSoapIn" />
+      <wsdl:output name="RequestPaidObj" message="tns:RequestPaidObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PaidMeterBillATM">
+      <wsdl:input name="PaidATM" message="tns:PaidATMSoapIn" />
+      <wsdl:output name="PaidATM" message="tns:PaidATMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PaidMeterBillATM">
+      <wsdl:input name="PaidATMObj" message="tns:PaidATMObjSoapIn" />
+      <wsdl:output name="PaidATMObj" message="tns:PaidATMObjSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MeterBillServiceToBankSoap" type="tns:MeterBillServiceToBankSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMeterBill">
+      <soap:operation soapAction="http://tempuri.org/MeterRequest" style="document" />
+      <wsdl:input name="MeterRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MeterRequest">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeterBill">
+      <soap:operation soapAction="http://tempuri.org/MeterRequestObj" style="document" />
+      <wsdl:input name="MeterRequestObj">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MeterRequestObj">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeterBillATM">
+      <soap:operation soapAction="http://tempuri.org/GetRequestATM" style="document" />
+      <wsdl:input name="GetRequestATM">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRequestATM">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeterBillATM">
+      <soap:operation soapAction="http://tempuri.org/GetRequestATMObj" style="document" />
+      <wsdl:input name="GetRequestATMObj">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRequestATMObj">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaidMeterBill">
+      <soap:operation soapAction="http://tempuri.org/RequestPaid" style="document" />
+      <wsdl:input name="RequestPaid">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RequestPaid">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaidMeterBill">
+      <soap:operation soapAction="http://tempuri.org/RequestPaidObj" style="document" />
+      <wsdl:input name="RequestPaidObj">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RequestPaidObj">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaidMeterBillATM">
+      <soap:operation soapAction="http://tempuri.org/PaidATM" style="document" />
+      <wsdl:input name="PaidATM">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PaidATM">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaidMeterBillATM">
+      <soap:operation soapAction="http://tempuri.org/PaidATMObj" style="document" />
+      <wsdl:input name="PaidATMObj">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PaidATMObj">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MeterBillServiceToBankSoap12" type="tns:MeterBillServiceToBankSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMeterBill">
+      <soap12:operation soapAction="http://tempuri.org/MeterRequest" style="document" />
+      <wsdl:input name="MeterRequest">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MeterRequest">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeterBill">
+      <soap12:operation soapAction="http://tempuri.org/MeterRequestObj" style="document" />
+      <wsdl:input name="MeterRequestObj">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="MeterRequestObj">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeterBillATM">
+      <soap12:operation soapAction="http://tempuri.org/GetRequestATM" style="document" />
+      <wsdl:input name="GetRequestATM">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRequestATM">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMeterBillATM">
+      <soap12:operation soapAction="http://tempuri.org/GetRequestATMObj" style="document" />
+      <wsdl:input name="GetRequestATMObj">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetRequestATMObj">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaidMeterBill">
+      <soap12:operation soapAction="http://tempuri.org/RequestPaid" style="document" />
+      <wsdl:input name="RequestPaid">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RequestPaid">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaidMeterBill">
+      <soap12:operation soapAction="http://tempuri.org/RequestPaidObj" style="document" />
+      <wsdl:input name="RequestPaidObj">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RequestPaidObj">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaidMeterBillATM">
+      <soap12:operation soapAction="http://tempuri.org/PaidATM" style="document" />
+      <wsdl:input name="PaidATM">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PaidATM">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PaidMeterBillATM">
+      <soap12:operation soapAction="http://tempuri.org/PaidATMObj" style="document" />
+      <wsdl:input name="PaidATMObj">
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="PaidATMObj">
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MeterBillServiceToBank">
+    <wsdl:port name="MeterBillServiceToBankSoap" binding="tns:MeterBillServiceToBankSoap">
+      <soap:address location="https://meterservicetest.ypay.com.mm/meterbillservicetobank.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MeterBillServiceToBankSoap12" binding="tns:MeterBillServiceToBankSoap12">
+      <soap12:address location="https://meterservicetest.ypay.com.mm/meterbillservicetobank.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

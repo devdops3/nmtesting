@@ -1,0 +1,202 @@
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using RestSharp;
+
+// For MSP
+public class MSP
+{
+    public async Task<MspResponse> MspPost(string json, string token, string url)
+    {
+
+        try
+        {
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Authorization", "Bearer " + token);
+            var body = new StringContent(json, Encoding.UTF8, "application/json");
+            var httpResponseMessage = client.PostAsync(url, body).Result;
+
+            if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
+            {
+                var response = await httpResponseMessage.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject<MspResponse>(response);
+            }
+
+            var failureResponse = await httpResponseMessage.Content.ReadAsStringAsync();
+            var msg = JsonConvert.DeserializeObject<MspFailResponse>(failureResponse);
+            return new MspResponse
+            {
+                responseCode = "01",
+                responseDesc = msg.message,
+                transactionId = string.Empty
+            };
+        }
+        catch (Exception ex)
+        {
+        }
+
+        return null;
+    }
+
+    public string GetTokenMsp()
+    {
+        try
+        {
+            var tokenUrl = ConfigurationManager.AppSettings["MspTokenUrl"];
+            var clientId = ConfigurationManager.AppSettings["MSPClientId"];
+            var clientSecreteKey = ConfigurationManager.AppSettings["MSPClientSecreteKey"];
+
+            var form = new Dictionary<string, string> { { "grant_type", "client_credentials" }, { "client_id", clientId }, { "client_secret", clientSecreteKey } };
+
+            var client = new HttpClient();
+            //client.DefaultRequestHeaders.Add("Authorization", "Basic " + clientSecreteKey);
+
+            var tokenResponse = client.PostAsync(tokenUrl, new FormUrlEncodedContent(form)).Result;
+            var jsonContent = tokenResponse.Content.ReadAsStringAsync().Result;
+            OauthTokenResponse tokenResp = JsonConvert.DeserializeObject<OauthTokenResponse>(jsonContent);
+            return tokenResp.access_token;
+        }
+        catch (Exception ex)
+        {
+            return string.Empty;
+        }
+    }
+
+    public string GetToken()
+    {
+        var tokenUrl = ConfigurationManager.AppSettings["MspTokenUrl"];
+        var clientId = ConfigurationManager.AppSettings["MSPClientId"];
+        var clientSecreteKey = ConfigurationManager.AppSettings["MSPClientSecreteKey"];
+
+        var client = new RestClient(tokenUrl);
+        var request = new RestRequest(Method.POST);
+        request.AddHeader("cache-control", "no-cache");
+        request.AddHeader("content-type", "application/x-www-form-urlencoded");
+        request.AddParameter("application/x-www-form-urlencoded", "grant_type=client_credentials&client_id=" + clientId + "&client_secret=" + clientSecreteKey, ParameterType.RequestBody);
+        IRestResponse response = client.Execute(request);
+
+        Token token = new Token();
+        token = JsonConvert.DeserializeObject<Token>(response.Content);
+        return token.access_token;
+    }
+
+    public string GetSessionId(string msptoken, string handShakeUrl)
+    {
+        var aSCPublic = ConfigurationManager.AppSettings["NearMeMSPPrivateCert"];
+        var aSCSEC = ConfigurationManager.AppSettings["NearMeMSPPublicCert"];
+        var aSCPub = ConfigurationManager.AppSettings["MSPPbulicCert"];
+        var pwd = ConfigurationManager.AppSettings["NearMePassCode"];
+
+        var merchantpublic = File.ReadAllBytes(aSCPublic);
+        var merchantpublicstr = Encoding.UTF8.GetString(merchantpublic);
+        merchantpublicstr = "{ \"publicCert\": \"" + merchantpublicstr + "\" }";
+
+        var requestbyte = Encoding.UTF8.GetBytes(merchantpublicstr);
+        var pgp = new Pgp();
+        var publicKey = File.ReadAllBytes(aSCPub);
+        var encrBytes = pgp.Encrypt(requestbyte, publicKey);
+        var requestString = Encoding.UTF8.GetString(encrBytes);
+
+        var token = "Bearer " + msptoken;
+
+        var client = new RestClient(handShakeUrl);
+        var request = new RestRequest(Method.POST);
+        request.AddHeader("Authorization", token);
+        request.AddHeader("Content-Type", "application/json");
+        request.AddParameter("application/json", requestString, ParameterType.RequestBody);
+        var response = client.Execute(request);
+
+        var privateKeyBytes = File.ReadAllBytes(aSCSEC);
+        var responseByte = Encoding.UTF8.GetBytes(response.Content);
+        string decrMessage;
+        using (var privateKey = new MemoryStream(privateKeyBytes))
+        {
+            var decrBytes = Pgp.Decrypt(responseByte, privateKey, pwd);
+            decrMessage = Encoding.UTF8.GetString(decrBytes);
+        }
+
+        CertificateIdResponse IdResponse = new CertificateIdResponse();
+        IdResponse = JsonConvert.DeserializeObject<CertificateIdResponse>(decrMessage);
+        return IdResponse.certificateId;
+    }
+
+    public string ConfirmMsp(string mobileNumber, string amount, string msptoken, string qr, string confirmUrl, string handshakeUrl)
+    {
+        var aSCSEC = ConfigurationManager.AppSettings["NearMeMSPPublicCert"];
+        var aSCPub = ConfigurationManager.AppSettings["MSPPbulicCert"];
+        var pwd = ConfigurationManager.AppSettings["NearMePassCode"];
+
+        var inputString = "{ \"receiverMobileNo\": \"" + mobileNumber + "\", \"amount\": " + amount + " }";
+        var pgp = new Pgp();
+        var input = Encoding.UTF8.GetBytes(inputString);
+        var publicKey = File.ReadAllBytes(aSCPub);
+        var encrBytes = pgp.Encrypt(input, publicKey);
+        var encrString = Encoding.UTF8.GetString(encrBytes);
+
+        var token = "Bearer " + msptoken;
+        var client = new RestClient(confirmUrl + qr + "/process");
+        var request = new RestRequest(Method.POST);
+        request.AddHeader("Authorization", token);
+        var sessionId = GetSessionId(msptoken, handshakeUrl);
+        request.AddHeader("X-session", sessionId);
+        request.AddHeader("Content-Type", "application/json");
+        request.AddParameter("application/json", encrString, ParameterType.RequestBody);
+        IRestResponse response = client.Execute(request);
+
+        var privateKeyBytes = File.ReadAllBytes(aSCSEC);
+        var responseByte = Encoding.UTF8.GetBytes(response.Content);
+        string decrMessage;
+        using (var privateKey = new MemoryStream(privateKeyBytes))
+        {
+            var decrBytes = Pgp.Decrypt(responseByte, privateKey, pwd);
+            decrMessage = Encoding.UTF8.GetString(decrBytes);
+        }
+        return decrMessage;
+    }
+}
+
+
+public class OauthTokenResponse
+{
+    public string access_token { get; set; }
+    public string refresh_token { get; set; }
+    public string id_token { get; set; }
+    public string token_type { get; set; }
+    public string expires_in { get; set; }
+
+}
+
+public class CertificateIdResponse
+{
+    public string certificateId { get; set; }
+}
+
+public class Token
+{
+    public string access_token { get; set; }
+}
+
+public class MspRequest
+{
+    public string amount { get; set; }
+    public string receiverMobileNo { get; set; }
+}
+
+public class MspResponse
+{
+    public string transactionId { get; set; }
+    public string responseCode { get; set; }
+    public string responseDesc { get; set; }
+}
+
+public class MspFailResponse
+{
+    public string message { get; set; }
+}
+

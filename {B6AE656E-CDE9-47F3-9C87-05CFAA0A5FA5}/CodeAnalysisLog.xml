@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="11.0">
+ <Targets>
+  <Target Name="C:\Users\Ladmin\AppData\Local\Temp\tmp5D00.tmp.cadir\bin\App_Code.dll">
+   <Modules>
+    <Module Name="app_code.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="Service" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#inquiry2Biller(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-03-06 05:37:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Service.cs" Line="4416">Object 'dataStream' can be disposed more than once in method 'Service.inquiry2Biller(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 4416, 4417, 4418</Issue>
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Service.cs" Line="4416">Object 'reader' can be disposed more than once in method 'Service.inquiry2Biller(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 4416</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#PostFraudProfile(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-03-06 05:37:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Service.cs" Line="30519">Object 'objRequest.GetRequestStream()' can be disposed more than once in method 'Service.PostFraudProfile(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 30519</Issue>
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Service.cs" Line="30519">Object 'streamWriter' can be disposed more than once in method 'Service.PostFraudProfile(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 30519</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TopupEncrypt(System.String,System.String,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-03-06 05:37:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Service.cs" Line="6937">Object 'csEncrypt' can be disposed more than once in method 'Service.TopupEncrypt(string, string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 6937</Issue>
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Service.cs" Line="6937">Object 'msEncrypt' can be disposed more than once in method 'Service.TopupEncrypt(string, string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 6937, 6938</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Utils" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AESDecrypt(System.Byte[],System.Byte[])" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-03-06 05:37:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="2240">Object 'cs' can be disposed more than once in method 'Utils.AESDecrypt(byte[], byte[])'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 2240</Issue>
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="2240">Object 'ms' can be disposed more than once in method 'Utils.AESDecrypt(byte[], byte[])'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 2240, 2243</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#EBADataRequest(System.String,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-03-06 05:37:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="2185">Object 'httpWebRequest.GetRequestStream()' can be disposed more than once in method 'Utils.EBADataRequest(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 2185</Issue>
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="2185">Object 'streamWriter' can be disposed more than once in method 'Utils.EBADataRequest(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 2185</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#legacyDecrypt(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-03-06 05:37:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="1329">Object 'cs' can be disposed more than once in method 'Utils.legacyDecrypt(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1329</Issue>
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="1329">Object 'ms' can be disposed more than once in method 'Utils.legacyDecrypt(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1329, 1331</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#legacyEncrypt(System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-03-06 05:37:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="1307">Object 'cs' can be disposed more than once in method 'Utils.legacyEncrypt(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1307</Issue>
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="1307">Object 'ms' can be disposed more than once in method 'Utils.legacyEncrypt(string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1307, 1309</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#MapTitanConfirmResponse(System.IO.Stream)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-03-06 05:37:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="2593">Object 'confirmResponseStream' can be disposed more than once in method 'Utils.MapTitanConfirmResponse(Stream)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 2593</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#PaymentRequest(System.String,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-03-06 05:37:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="2149">Object 'httpWebRequest.GetRequestStream()' can be disposed more than once in method 'Utils.PaymentRequest(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 2149</Issue>
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="2149">Object 'streamWriter' can be disposed more than once in method 'Utils.PaymentRequest(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 2149</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#pinRequest(System.String,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-03-06 05:37:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="2116">Object 'httpWebRequest.GetRequestStream()' can be disposed more than once in method 'Utils.pinRequest(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 2116</Issue>
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="2116">Object 'streamWriter' can be disposed more than once in method 'Utils.pinRequest(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 2116</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#PostEba(System.String,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-03-06 05:37:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="2951">Object 'httpWebRequest.GetRequestStream()' can be disposed more than once in method 'Utils.PostEba(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 2951</Issue>
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="2951">Object 'streamWriter' can be disposed more than once in method 'Utils.PostEba(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 2951</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Rent2OwnRequest(System.String,System.String)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2019-03-06 05:37:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="2625">Object 'httpWebRequest.GetRequestStream()' can be disposed more than once in method 'Utils.Rent2OwnRequest(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 2625</Issue>
+             <Issue Certainty="75" Level="Warning" Path="d:\2C2P\Alternative-Payment-Network\BIS\BIS\App_Code" File="Utils.cs" Line="2625">Object 'streamWriter' can be disposed more than once in method 'Utils.Rent2OwnRequest(string, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 2625</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Do not dispose objects multiple times</Name>
+   <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 30519</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

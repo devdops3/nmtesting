@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://172.30.1.25/AggregatorWebPinService/PinService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/EBA.Web.PinService" />
+  <xs:element name="GetTelcoPIN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Channel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BillerCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="NetworkType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PriceType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTelcoPINResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EBA.Web.PinService" minOccurs="0" name="GetTelcoPINResult" nillable="true" type="q1:PINRESULT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGiftCardPIN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Token" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Channel" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="BillerCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PriceType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetGiftCardPINResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EBA.Web.PinService" minOccurs="0" name="GetGiftCardPINResult" nillable="true" type="q2:PINRESULT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:10533/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ForwarderService.Interface.Common.CommunictionObjects" />
+  <xs:import schemaLocation="http://localhost:10533/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ForwarderService.Domain" />
+  <xs:element name="GetAgentUserByEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAgentUserByEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ForwarderService.Interface.Common.CommunictionObjects" minOccurs="0" name="GetAgentUserByEmailResult" nillable="true" type="q1:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckIsAuthenticate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="taxId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckIsAuthenticateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ForwarderService.Interface.Common.CommunictionObjects" minOccurs="0" name="CheckIsAuthenticateResult" nillable="true" type="q2:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="version" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="timeStamp" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="taxId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inquiryType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="messageId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partnerAmount" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionAmount" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="detail" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ForwarderService.Interface.Common.CommunictionObjects" minOccurs="0" name="InsertTransactionResult" nillable="true" type="q3:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitiatePayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="version" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="taxId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inquiryType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionAmount" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="messageId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="callbackUrl" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionRef" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitiatePaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ForwarderService.Interface.Common.CommunictionObjects" minOccurs="0" name="InitiatePaymentResult" nillable="true" type="q4:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="txnId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ref1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ref2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ref3" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ref4" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ref5" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="approvalCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="statusDesc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="smsStatus" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="mobileNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ForwarderService.Interface.Common.CommunictionObjects" minOccurs="0" name="UpdateTransactionResult" nillable="true" type="q5:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="txnId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="statusCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="statusDescription" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ref1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ref2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ref3" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ref4" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ref5" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ForwarderService.Interface.Common.CommunictionObjects" minOccurs="0" name="GetTransactionByIdResult" nillable="true" type="q6:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionByToken">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tokenId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTransactionByTokenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ForwarderService.Interface.Common.CommunictionObjects" minOccurs="0" name="GetTransactionByTokenResult" nillable="true" type="q7:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExistTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="txnId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExistTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ForwarderService.Interface.Common.CommunictionObjects" minOccurs="0" name="GetExistTransactionResult" nillable="true" type="q8:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmPayment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="taxId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="txnId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ForwarderService.Interface.Common.CommunictionObjects" minOccurs="0" name="ConfirmPaymentResult" nillable="true" type="q9:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitiatePaymentV2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="version" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="taxId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inquiryType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionAmount" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="messageId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="callbackUrl" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="transactionRef" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="clientId" nillable="true" type="xs:string" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ForwarderService.Domain" minOccurs="0" name="b2bInvoices" nillable="true" type="q10:ArrayOfTblB2BInvoices" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitiatePaymentV2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ForwarderService.Interface.Common.CommunictionObjects" minOccurs="0" name="InitiatePaymentV2Result" nillable="true" type="q11:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefundV2_B2BInvoices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="txnRef" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="refundAmt" type="xs:decimal" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ForwarderService.Domain" minOccurs="0" name="b2bInvoices" nillable="true" type="q12:TblB2BInvoices" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RefundV2_B2BInvoicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ForwarderService.Interface.Common.CommunictionObjects" minOccurs="0" name="RefundV2_B2BInvoicesResult" nillable="true" type="q13:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateB2BInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="InvoiceId" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TransactionRef" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateB2BInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ForwarderService.Interface.Common.CommunictionObjects" minOccurs="0" name="UpdateB2BInvoiceResult" nillable="true" type="q14:ServiceResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

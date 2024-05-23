@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="sendMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fromDisplayName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sendMailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendMailCDONTS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fromEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDisplayName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendMailCDONTSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sendMailCDONTSResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendGridMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fromEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDisplayName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendGridMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sendGridMailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendGridMailWithCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fromEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDisplayName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCategory" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendGridMailWithCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sendGridMailWithCategoryResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendAWSMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fromEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromDisplayName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="body" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendAWSMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sendAWSMailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendGridEmailwihtAttached">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="toEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bccEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromEmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromEmailDisplayName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="identifierKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="identifierValue" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isAttached" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="attFilePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="attFileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isHtml" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendGridEmailwihtAttachedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sendGridEmailwihtAttachedResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendEmailByteArrayAttached">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="toEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bccEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromEmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromEmailDisplayName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="identifierKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="identifierValue" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isAttached" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="attFilePath" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="attFileName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isHtml" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendEmailByteArrayAttachedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sendEmailByteArrayAttachedResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendEmailEmbededImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="toEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ccEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bccEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromEmailAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fromEmailDisplayName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msgBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="identifierKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="identifierValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="image1" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="contentID1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="image2" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="contentID2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="image3" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="contentID3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="image4" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="contentID4" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isHtml" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendEmailEmbededImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sendEmailEmbededImageResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="errMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="sendMailSoapIn">
+    <wsdl:part name="parameters" element="tns:sendMail" />
+  </wsdl:message>
+  <wsdl:message name="sendMailSoapOut">
+    <wsdl:part name="parameters" element="tns:sendMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendMailCDONTSSoapIn">
+    <wsdl:part name="parameters" element="tns:sendMailCDONTS" />
+  </wsdl:message>
+  <wsdl:message name="sendMailCDONTSSoapOut">
+    <wsdl:part name="parameters" element="tns:sendMailCDONTSResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendGridMailSoapIn">
+    <wsdl:part name="parameters" element="tns:sendGridMail" />
+  </wsdl:message>
+  <wsdl:message name="sendGridMailSoapOut">
+    <wsdl:part name="parameters" element="tns:sendGridMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendGridMailWithCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:sendGridMailWithCategory" />
+  </wsdl:message>
+  <wsdl:message name="sendGridMailWithCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:sendGridMailWithCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendAWSMailSoapIn">
+    <wsdl:part name="parameters" element="tns:sendAWSMail" />
+  </wsdl:message>
+  <wsdl:message name="sendAWSMailSoapOut">
+    <wsdl:part name="parameters" element="tns:sendAWSMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendGridEmailwihtAttachedSoapIn">
+    <wsdl:part name="parameters" element="tns:sendGridEmailwihtAttached" />
+  </wsdl:message>
+  <wsdl:message name="sendGridEmailwihtAttachedSoapOut">
+    <wsdl:part name="parameters" element="tns:sendGridEmailwihtAttachedResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendEmailByteArrayAttachedSoapIn">
+    <wsdl:part name="parameters" element="tns:sendEmailByteArrayAttached" />
+  </wsdl:message>
+  <wsdl:message name="sendEmailByteArrayAttachedSoapOut">
+    <wsdl:part name="parameters" element="tns:sendEmailByteArrayAttachedResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendEmailEmbededImageSoapIn">
+    <wsdl:part name="parameters" element="tns:sendEmailEmbededImage" />
+  </wsdl:message>
+  <wsdl:message name="sendEmailEmbededImageSoapOut">
+    <wsdl:part name="parameters" element="tns:sendEmailEmbededImageResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="sendMail">
+      <wsdl:input message="tns:sendMailSoapIn" />
+      <wsdl:output message="tns:sendMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendMailCDONTS">
+      <wsdl:input message="tns:sendMailCDONTSSoapIn" />
+      <wsdl:output message="tns:sendMailCDONTSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendGridMail">
+      <wsdl:input message="tns:sendGridMailSoapIn" />
+      <wsdl:output message="tns:sendGridMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendGridMailWithCategory">
+      <wsdl:input message="tns:sendGridMailWithCategorySoapIn" />
+      <wsdl:output message="tns:sendGridMailWithCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendAWSMail">
+      <wsdl:input message="tns:sendAWSMailSoapIn" />
+      <wsdl:output message="tns:sendAWSMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendGridEmailwihtAttached">
+      <wsdl:input message="tns:sendGridEmailwihtAttachedSoapIn" />
+      <wsdl:output message="tns:sendGridEmailwihtAttachedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendEmailByteArrayAttached">
+      <wsdl:input message="tns:sendEmailByteArrayAttachedSoapIn" />
+      <wsdl:output message="tns:sendEmailByteArrayAttachedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendEmailEmbededImage">
+      <wsdl:input message="tns:sendEmailEmbededImageSoapIn" />
+      <wsdl:output message="tns:sendEmailEmbededImageSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sendMail">
+      <soap:operation soapAction="http://tempuri.org/sendMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendMailCDONTS">
+      <soap:operation soapAction="http://tempuri.org/sendMailCDONTS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendGridMail">
+      <soap:operation soapAction="http://tempuri.org/sendGridMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendGridMailWithCategory">
+      <soap:operation soapAction="http://tempuri.org/sendGridMailWithCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendAWSMail">
+      <soap:operation soapAction="http://tempuri.org/sendAWSMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendGridEmailwihtAttached">
+      <soap:operation soapAction="http://tempuri.org/sendGridEmailwihtAttached" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendEmailByteArrayAttached">
+      <soap:operation soapAction="http://tempuri.org/sendEmailByteArrayAttached" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendEmailEmbededImage">
+      <soap:operation soapAction="http://tempuri.org/sendEmailEmbededImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="sendMail">
+      <soap12:operation soapAction="http://tempuri.org/sendMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendMailCDONTS">
+      <soap12:operation soapAction="http://tempuri.org/sendMailCDONTS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendGridMail">
+      <soap12:operation soapAction="http://tempuri.org/sendGridMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendGridMailWithCategory">
+      <soap12:operation soapAction="http://tempuri.org/sendGridMailWithCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendAWSMail">
+      <soap12:operation soapAction="http://tempuri.org/sendAWSMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendGridEmailwihtAttached">
+      <soap12:operation soapAction="http://tempuri.org/sendGridEmailwihtAttached" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendEmailByteArrayAttached">
+      <soap12:operation soapAction="http://tempuri.org/sendEmailByteArrayAttached" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendEmailEmbededImage">
+      <soap12:operation soapAction="http://tempuri.org/sendEmailEmbededImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://utility.2c2p.com/2C2PSendMailWS/SendMailWS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://utility.2c2p.com/2C2PSendMailWS/SendMailWS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

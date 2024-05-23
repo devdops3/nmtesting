@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PINService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:53135/PINService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:53135/PINService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPINService_getPIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPIN" />
+  </wsdl:message>
+  <wsdl:message name="IPINService_getPIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPINService_getPINMPT_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPINMPT" />
+  </wsdl:message>
+  <wsdl:message name="IPINService_getPINMPT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPINMPTResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPINService_getVAKOKPIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:getVAKOKPIN" />
+  </wsdl:message>
+  <wsdl:message name="IPINService_getVAKOKPIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getVAKOKPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPINService_getiTunesPIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:getiTunesPIN" />
+  </wsdl:message>
+  <wsdl:message name="IPINService_getiTunesPIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getiTunesPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPINService_ConfirmiTunesPIN_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmiTunesPIN" />
+  </wsdl:message>
+  <wsdl:message name="IPINService_ConfirmiTunesPIN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmiTunesPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPINService_getPINOoredoo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPINOoredoo" />
+  </wsdl:message>
+  <wsdl:message name="IPINService_getPINOoredoo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPINOoredooResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPINService">
+    <wsdl:operation name="getPIN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPINService/getPIN" message="tns:IPINService_getPIN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPINService/getPINResponse" message="tns:IPINService_getPIN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPINMPT">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPINService/getPINMPT" message="tns:IPINService_getPINMPT_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPINService/getPINMPTResponse" message="tns:IPINService_getPINMPT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getVAKOKPIN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPINService/getVAKOKPIN" message="tns:IPINService_getVAKOKPIN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPINService/getVAKOKPINResponse" message="tns:IPINService_getVAKOKPIN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getiTunesPIN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPINService/getiTunesPIN" message="tns:IPINService_getiTunesPIN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPINService/getiTunesPINResponse" message="tns:IPINService_getiTunesPIN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmiTunesPIN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPINService/ConfirmiTunesPIN" message="tns:IPINService_ConfirmiTunesPIN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPINService/ConfirmiTunesPINResponse" message="tns:IPINService_ConfirmiTunesPIN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPINOoredoo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPINService/getPINOoredoo" message="tns:IPINService_getPINOoredoo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPINService/getPINOoredooResponse" message="tns:IPINService_getPINOoredoo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPINService" type="tns:IPINService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getPIN">
+      <soap:operation soapAction="http://tempuri.org/IPINService/getPIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPINMPT">
+      <soap:operation soapAction="http://tempuri.org/IPINService/getPINMPT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getVAKOKPIN">
+      <soap:operation soapAction="http://tempuri.org/IPINService/getVAKOKPIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getiTunesPIN">
+      <soap:operation soapAction="http://tempuri.org/IPINService/getiTunesPIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmiTunesPIN">
+      <soap:operation soapAction="http://tempuri.org/IPINService/ConfirmiTunesPIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPINOoredoo">
+      <soap:operation soapAction="http://tempuri.org/IPINService/getPINOoredoo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PINService">
+    <wsdl:port name="BasicHttpBinding_IPINService" binding="tns:BasicHttpBinding_IPINService">
+      <soap:address location="http://localhost:53135/PINService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

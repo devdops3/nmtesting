@@ -1,0 +1,2243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:11241/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:11241/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:11241/Service.svc?xsd=xsd2" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_minusAgentAmt_InputMessage">
+    <wsdl:part name="parameters" element="tns:minusAgentAmt" />
+  </wsdl:message>
+  <wsdl:message name="IService_minusAgentAmt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:minusAgentAmtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTxn_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTxn" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTxn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTxnResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getNewAgentCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:getNewAgentCode" />
+  </wsdl:message>
+  <wsdl:message name="IService_getNewAgentCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNewAgentCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgent_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgent" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBillerNameList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBillerNameList" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBillerNameList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBillerNameListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentFee_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentFee" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentFee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentFeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentChannel_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentChannel" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentChannel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentChannelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getFeesProfileList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getFeesProfileList" />
+  </wsdl:message>
+  <wsdl:message name="IService_getFeesProfileList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getFeesProfileListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getNewBranchCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:getNewBranchCode" />
+  </wsdl:message>
+  <wsdl:message name="IService_getNewBranchCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNewBranchCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentBranch_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentBranch" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentBranch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_registerAgentUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:registerAgentUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_registerAgentUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registerAgentUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsDuplicateAgentUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsDuplicateAgentUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsDuplicateAgentUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsDuplicateAgentUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_get_SystemConfigByKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_SystemConfigByKey" />
+  </wsdl:message>
+  <wsdl:message name="IService_get_SystemConfigByKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_SystemConfigByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsDuplicatedMobile_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsDuplicatedMobile" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsDuplicatedMobile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsDuplicatedMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getOauthToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOauthToken" />
+  </wsdl:message>
+  <wsdl:message name="IService_getOauthToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOauthTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsDuplicatedCNPYESCPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsDuplicatedCNPYESCPayment" />
+  </wsdl:message>
+  <wsdl:message name="IService_IsDuplicatedCNPYESCPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsDuplicatedCNPYESCPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMeterBillerByTownshipCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMeterBillerByTownshipCode" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMeterBillerByTownshipCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMeterBillerByTownshipCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMeterDivisionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMeterDivisionList" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMeterDivisionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMeterDivisionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDivisionTownshipBranchList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDivisionTownshipBranchList" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetDivisionTownshipBranchList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDivisionTownshipBranchListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertRemittanceNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRemittanceNotification" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertRemittanceNotification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertRemittanceNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPartnerUserListByBranchCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartnerUserListByBranchCode" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetPartnerUserListByBranchCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartnerUserListByBranchCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateRemittanceNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRemittanceNotification" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateRemittanceNotification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRemittanceNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRemittanceNotification_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemittanceNotification" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetRemittanceNotification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemittanceNotificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetBranchByUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchByUserID" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetBranchByUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBranchByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNotificationList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationList" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetNotificationList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConfirmUpdateCashOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmUpdateCashOut" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConfirmUpdateCashOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmUpdateCashOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_checkAgentInfoforCashOut_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkAgentInfoforCashOut" />
+  </wsdl:message>
+  <wsdl:message name="IService_checkAgentInfoforCashOut_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkAgentInfoforCashOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_get663FeesByAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:get663FeesByAmount" />
+  </wsdl:message>
+  <wsdl:message name="IService_get663FeesByAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get663FeesByAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAvailableBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAvailableBalance" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAvailableBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAvailableBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMaHaOneStopPlusPartnerFirstUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMaHaOneStopPlusPartnerFirstUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMaHaOneStopPlusPartnerFirstUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMaHaOneStopPlusPartnerFirstUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAgentUserUniqueIDByLoginID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAgentUserUniqueIDByLoginID" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAgentUserUniqueIDByLoginID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAgentUserUniqueIDByLoginIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertUpdateOTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertUpdateOTP" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertUpdateOTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertUpdateOTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertUpdateOTPV2_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertUpdateOTPV2" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertUpdateOTPV2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertUpdateOTPV2Response" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateAgentProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateAgentProfile" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateAgentProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateAgentProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateAgentProfileV2_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateAgentProfileV2" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateAgentProfileV2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateAgentProfileV2Response" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetParamiGasDivisionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParamiGasDivisionList" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetParamiGasDivisionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParamiGasDivisionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetParamiGasTownshipList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParamiGasTownshipList" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetParamiGasTownshipList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParamiGasTownshipListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTransctionListForCM_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTransctionListForCM" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTransctionListForCM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTransctionListForCMResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCategoryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCategoryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCategoryAndBillerByAgentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCategoryAndBillerByAgentId" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCategoryAndBillerByAgentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCategoryAndBillerByAgentIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertMerchantTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMerchantTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertMerchantTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertMerchantTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateMerchantTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMerchantTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateMerchantTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMerchantTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateCBPayMerchantTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCBPayMerchantTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateCBPayMerchantTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCBPayMerchantTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertCardTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCardTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertCardTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCardTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_VoidCardTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:VoidCardTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IService_VoidCardTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VoidCardTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetBatchNBatchNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBatchNBatchNo" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetBatchNBatchNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBatchNBatchNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetIssuerInsId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIssuerInsId" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetIssuerInsId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIssuerInsIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCardTransactionByMerchentTransactionId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardTransactionByMerchentTransactionId" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCardTransactionByMerchentTransactionId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCardTransactionByMerchentTransactionIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckIsMerchant_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckIsMerchant" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckIsMerchant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckIsMerchantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMerchantPaymentProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchantPaymentProfile" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMerchantPaymentProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchantPaymentProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentTopupByPayBills_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentTopupByPayBills" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentTopupByPayBills_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentTopupByPayBillsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMerchantTransactionById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchantTransactionById" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetMerchantTransactionById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMerchantTransactionByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateC2BMerchantTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateC2BMerchantTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateC2BMerchantTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateC2BMerchantTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAuthentication_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAuthentication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAgentUserLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAgentUserLogin" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAgentUserLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAgentUserLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getSlipTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSlipTemplate" />
+  </wsdl:message>
+  <wsdl:message name="IService_getSlipTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSlipTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTodayTxnCountAmt_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTodayTxnCountAmt" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTodayTxnCountAmt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTodayTxnCountAmtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMacAddressList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMacAddressList" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMacAddressList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMacAddressListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateIspaired_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateIspaired" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateIspaired_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateIspairedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertBranchTerminal_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBranchTerminal" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertBranchTerminal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBranchTerminalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDevice" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateIsPC_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateIsPC" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateIsPC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateIsPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBranchTerminalID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBranchTerminalID" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBranchTerminalID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBranchTerminalIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getInquiry_InputMessage">
+    <wsdl:part name="parameters" element="tns:getInquiry" />
+  </wsdl:message>
+  <wsdl:message name="IService_getInquiry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getInquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getInquiryReq_InputMessage">
+    <wsdl:part name="parameters" element="tns:getInquiryReq" />
+  </wsdl:message>
+  <wsdl:message name="IService_getInquiryReq_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getInquiryReqResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAgentNameByAgentCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAgentNameByAgentCode" />
+  </wsdl:message>
+  <wsdl:message name="IService_getAgentNameByAgentCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAgentNameByAgentCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertAgentUserLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAgentUserLog" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertAgentUserLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAgentUserLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addFund2OneStopPlus_InputMessage">
+    <wsdl:part name="parameters" element="tns:addFund2OneStopPlus" />
+  </wsdl:message>
+  <wsdl:message name="IService_addFund2OneStopPlus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addFund2OneStopPlusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBalance" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConfirmUpdate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmUpdate" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConfirmUpdate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCustomerAndInvoiceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCustomerAndInvoiceInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCustomerAndInvoiceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCustomerAndInvoiceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTransactionByMsgID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTransactionByMsgID" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTransactionByMsgID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTransactionByMsgIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMerchantTransactionByMsgID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMerchantTransactionByMsgID" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMerchantTransactionByMsgID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMerchantTransactionByMsgIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTransactionByPolicyNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTransactionByPolicyNo" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTransactionByPolicyNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTransactionByPolicyNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertTransactionLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTransactionLog" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertTransactionLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTransactionLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateError_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateError" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateError_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateSMSStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateSMSStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateSMSStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateSMSStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateSMSStatusforMerchant_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateSMSStatusforMerchant" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateSMSStatusforMerchant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateSMSStatusforMerchantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_resetCredit_InputMessage">
+    <wsdl:part name="parameters" element="tns:resetCredit" />
+  </wsdl:message>
+  <wsdl:message name="IService_resetCredit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:resetCreditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_checkBillerID_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkBillerID" />
+  </wsdl:message>
+  <wsdl:message name="IService_checkBillerID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkBillerIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_checkBillerIDWithSourceName_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkBillerIDWithSourceName" />
+  </wsdl:message>
+  <wsdl:message name="IService_checkBillerIDWithSourceName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkBillerIDWithSourceNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBillerDetailByTaxId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBillerDetailByTaxId" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBillerDetailByTaxId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBillerDetailByTaxIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getRefDesc_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRefDesc" />
+  </wsdl:message>
+  <wsdl:message name="IService_getRefDesc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRefDescResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateErrorWithAddingBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateErrorWithAddingBalance" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateErrorWithAddingBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateErrorWithAddingBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTransactionlist_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTransactionlist" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTransactionlist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTransactionlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_searchTransactionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchTransactionList" />
+  </wsdl:message>
+  <wsdl:message name="IService_searchTransactionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchTransactionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_searchTransactionListWithStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchTransactionListWithStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService_searchTransactionListWithStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchTransactionListWithStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_searchTransactionListReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchTransactionListReport" />
+  </wsdl:message>
+  <wsdl:message name="IService_searchTransactionListReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchTransactionListReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTransactionSummaryReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTransactionSummaryReport" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTransactionSummaryReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTransactionSummaryReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTransactionListReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTransactionListReport" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTransactionListReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTransactionListReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertTransactionWithDeductBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertTransactionWithDeductBalance" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertTransactionWithDeductBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertTransactionWithDeductBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertTransactionWithDeductBalanceAndSourceName_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertTransactionWithDeductBalanceAndSourceName" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertTransactionWithDeductBalanceAndSourceName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertTransactionWithDeductBalanceAndSourceNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertTransactionWithSourceName_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertTransactionWithSourceName" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertTransactionWithSourceName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertTransactionWithSourceNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_checkTelenoreTimeInterval_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkTelenoreTimeInterval" />
+  </wsdl:message>
+  <wsdl:message name="IService_checkTelenoreTimeInterval_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkTelenoreTimeIntervalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddTerminal_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTerminal" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddTerminal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTerminalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTransactionDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTransactionDetail" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTransactionDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTransactionDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBillerListByAgentCodeAndCatID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBillerListByAgentCodeAndCatID" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBillerListByAgentCodeAndCatID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBillerListByAgentCodeAndCatIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBillerList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBillerList" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBillerList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBillerListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMapTaxIDByTaxID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMapTaxIDByTaxID" />
+  </wsdl:message>
+  <wsdl:message name="IService_getMapTaxIDByTaxID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMapTaxIDByTaxIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBillerServiceFeeByProfileId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBillerServiceFeeByProfileId" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBillerServiceFeeByProfileId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBillerServiceFeeByProfileIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBillerFeeProfileByAgentId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBillerFeeProfileByAgentId" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBillerFeeProfileByAgentId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBillerFeeProfileByAgentIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_get_Denomination_InputMessage">
+    <wsdl:part name="parameters" element="tns:get_Denomination" />
+  </wsdl:message>
+  <wsdl:message name="IService_get_Denomination_OutputMessage">
+    <wsdl:part name="parameters" element="tns:get_DenominationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBatchlist_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBatchlist" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBatchlist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBatchlistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTownshiplist_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTownshiplist" />
+  </wsdl:message>
+  <wsdl:message name="IService_getTownshiplist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTownshiplistResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBatchDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBatchDetail" />
+  </wsdl:message>
+  <wsdl:message name="IService_getBatchDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBatchDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCloseShiftDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCloseShiftDetail" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCloseShiftDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCloseShiftDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCloseShift_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCloseShift" />
+  </wsdl:message>
+  <wsdl:message name="IService_getCloseShift_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCloseShiftResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ChangePassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="IService_ChangePassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ResetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IService_ResetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentTopupBy1Stop_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentTopupBy1Stop" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentTopupBy1Stop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentTopupBy1StopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentTopupByMercyCrops_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentTopupByMercyCrops" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentTopupByMercyCrops_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentTopupByMercyCropsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentTopupMercyCrop_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentTopupMercyCrop" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentTopupMercyCrop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentTopupMercyCropResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentTopupLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentTopupLog" />
+  </wsdl:message>
+  <wsdl:message name="IService_insertAgentTopupLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertAgentTopupLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateAgentTopupMercycrop_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateAgentTopupMercycrop" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateAgentTopupMercycrop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateAgentTopupMercycropResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_minusChannelPlusAmt_InputMessage">
+    <wsdl:part name="parameters" element="tns:minusChannelPlusAmt" />
+  </wsdl:message>
+  <wsdl:message name="IService_minusChannelPlusAmt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:minusChannelPlusAmtResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="minusAgentAmt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/minusAgentAmt" message="tns:IService_minusAgentAmt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/minusAgentAmtResponse" message="tns:IService_minusAgentAmt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTxn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTxn" message="tns:IService_GetTxn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTxnResponse" message="tns:IService_GetTxn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getNewAgentCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getNewAgentCode" message="tns:IService_getNewAgentCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getNewAgentCodeResponse" message="tns:IService_getNewAgentCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertAgent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertAgent" message="tns:IService_insertAgent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertAgentResponse" message="tns:IService_insertAgent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBillerNameList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getBillerNameList" message="tns:IService_getBillerNameList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getBillerNameListResponse" message="tns:IService_getBillerNameList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentFee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertAgentFee" message="tns:IService_insertAgentFee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertAgentFeeResponse" message="tns:IService_insertAgentFee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentChannel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertAgentChannel" message="tns:IService_insertAgentChannel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertAgentChannelResponse" message="tns:IService_insertAgentChannel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getFeesProfileList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getFeesProfileList" message="tns:IService_getFeesProfileList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getFeesProfileListResponse" message="tns:IService_getFeesProfileList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getNewBranchCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getNewBranchCode" message="tns:IService_getNewBranchCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getNewBranchCodeResponse" message="tns:IService_getNewBranchCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentBranch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertAgentBranch" message="tns:IService_insertAgentBranch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertAgentBranchResponse" message="tns:IService_insertAgentBranch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="registerAgentUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/registerAgentUser" message="tns:IService_registerAgentUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/registerAgentUserResponse" message="tns:IService_registerAgentUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsDuplicateAgentUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IsDuplicateAgentUser" message="tns:IService_IsDuplicateAgentUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IsDuplicateAgentUserResponse" message="tns:IService_IsDuplicateAgentUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_SystemConfigByKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/get_SystemConfigByKey" message="tns:IService_get_SystemConfigByKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/get_SystemConfigByKeyResponse" message="tns:IService_get_SystemConfigByKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsDuplicatedMobile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IsDuplicatedMobile" message="tns:IService_IsDuplicatedMobile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IsDuplicatedMobileResponse" message="tns:IService_IsDuplicatedMobile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOauthToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getOauthToken" message="tns:IService_getOauthToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getOauthTokenResponse" message="tns:IService_getOauthToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsDuplicatedCNPYESCPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/IsDuplicatedCNPYESCPayment" message="tns:IService_IsDuplicatedCNPYESCPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/IsDuplicatedCNPYESCPaymentResponse" message="tns:IService_IsDuplicatedCNPYESCPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMeterBillerByTownshipCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getMeterBillerByTownshipCode" message="tns:IService_getMeterBillerByTownshipCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getMeterBillerByTownshipCodeResponse" message="tns:IService_getMeterBillerByTownshipCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMeterDivisionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getMeterDivisionList" message="tns:IService_getMeterDivisionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getMeterDivisionListResponse" message="tns:IService_getMeterDivisionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDivisionTownshipBranchList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetDivisionTownshipBranchList" message="tns:IService_GetDivisionTownshipBranchList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetDivisionTownshipBranchListResponse" message="tns:IService_GetDivisionTownshipBranchList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertRemittanceNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertRemittanceNotification" message="tns:IService_InsertRemittanceNotification_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertRemittanceNotificationResponse" message="tns:IService_InsertRemittanceNotification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartnerUserListByBranchCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetPartnerUserListByBranchCode" message="tns:IService_GetPartnerUserListByBranchCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetPartnerUserListByBranchCodeResponse" message="tns:IService_GetPartnerUserListByBranchCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRemittanceNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateRemittanceNotification" message="tns:IService_UpdateRemittanceNotification_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateRemittanceNotificationResponse" message="tns:IService_UpdateRemittanceNotification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemittanceNotification">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetRemittanceNotification" message="tns:IService_GetRemittanceNotification_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetRemittanceNotificationResponse" message="tns:IService_GetRemittanceNotification_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchByUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetBranchByUserID" message="tns:IService_GetBranchByUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetBranchByUserIDResponse" message="tns:IService_GetBranchByUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotificationList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetNotificationList" message="tns:IService_GetNotificationList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetNotificationListResponse" message="tns:IService_GetNotificationList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmUpdateCashOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ConfirmUpdateCashOut" message="tns:IService_ConfirmUpdateCashOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ConfirmUpdateCashOutResponse" message="tns:IService_ConfirmUpdateCashOut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkAgentInfoforCashOut">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/checkAgentInfoforCashOut" message="tns:IService_checkAgentInfoforCashOut_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/checkAgentInfoforCashOutResponse" message="tns:IService_checkAgentInfoforCashOut_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get663FeesByAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/get663FeesByAmount" message="tns:IService_get663FeesByAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/get663FeesByAmountResponse" message="tns:IService_get663FeesByAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableBalance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAvailableBalance" message="tns:IService_getAvailableBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAvailableBalanceResponse" message="tns:IService_getAvailableBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaHaOneStopPlusPartnerFirstUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getMaHaOneStopPlusPartnerFirstUser" message="tns:IService_getMaHaOneStopPlusPartnerFirstUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getMaHaOneStopPlusPartnerFirstUserResponse" message="tns:IService_getMaHaOneStopPlusPartnerFirstUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAgentUserUniqueIDByLoginID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAgentUserUniqueIDByLoginID" message="tns:IService_getAgentUserUniqueIDByLoginID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAgentUserUniqueIDByLoginIDResponse" message="tns:IService_getAgentUserUniqueIDByLoginID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertUpdateOTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertUpdateOTP" message="tns:IService_insertUpdateOTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertUpdateOTPResponse" message="tns:IService_insertUpdateOTP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertUpdateOTPV2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertUpdateOTPV2" message="tns:IService_insertUpdateOTPV2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertUpdateOTPV2Response" message="tns:IService_insertUpdateOTPV2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateAgentProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/updateAgentProfile" message="tns:IService_updateAgentProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/updateAgentProfileResponse" message="tns:IService_updateAgentProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateAgentProfileV2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/updateAgentProfileV2" message="tns:IService_updateAgentProfileV2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/updateAgentProfileV2Response" message="tns:IService_updateAgentProfileV2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParamiGasDivisionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetParamiGasDivisionList" message="tns:IService_GetParamiGasDivisionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetParamiGasDivisionListResponse" message="tns:IService_GetParamiGasDivisionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParamiGasTownshipList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetParamiGasTownshipList" message="tns:IService_GetParamiGasTownshipList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetParamiGasTownshipListResponse" message="tns:IService_GetParamiGasTownshipList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransctionListForCM">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getTransctionListForCM" message="tns:IService_getTransctionListForCM_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getTransctionListForCMResponse" message="tns:IService_getTransctionListForCM_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCategoryList" message="tns:IService_getCategoryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCategoryListResponse" message="tns:IService_getCategoryList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryAndBillerByAgentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCategoryAndBillerByAgentId" message="tns:IService_getCategoryAndBillerByAgentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCategoryAndBillerByAgentIdResponse" message="tns:IService_getCategoryAndBillerByAgentId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMerchantTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertMerchantTransaction" message="tns:IService_InsertMerchantTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertMerchantTransactionResponse" message="tns:IService_InsertMerchantTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMerchantTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateMerchantTransaction" message="tns:IService_UpdateMerchantTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateMerchantTransactionResponse" message="tns:IService_UpdateMerchantTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCBPayMerchantTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateCBPayMerchantTransaction" message="tns:IService_UpdateCBPayMerchantTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateCBPayMerchantTransactionResponse" message="tns:IService_UpdateCBPayMerchantTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCardTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertCardTransaction" message="tns:IService_InsertCardTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertCardTransactionResponse" message="tns:IService_InsertCardTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidCardTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/VoidCardTransaction" message="tns:IService_VoidCardTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/VoidCardTransactionResponse" message="tns:IService_VoidCardTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBatchNBatchNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetBatchNBatchNo" message="tns:IService_GetBatchNBatchNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetBatchNBatchNoResponse" message="tns:IService_GetBatchNBatchNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIssuerInsId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetIssuerInsId" message="tns:IService_GetIssuerInsId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetIssuerInsIdResponse" message="tns:IService_GetIssuerInsId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCardTransactionByMerchentTransactionId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetCardTransactionByMerchentTransactionId" message="tns:IService_GetCardTransactionByMerchentTransactionId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetCardTransactionByMerchentTransactionIdResponse" message="tns:IService_GetCardTransactionByMerchentTransactionId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckIsMerchant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CheckIsMerchant" message="tns:IService_CheckIsMerchant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CheckIsMerchantResponse" message="tns:IService_CheckIsMerchant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantPaymentProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetMerchantPaymentProfile" message="tns:IService_GetMerchantPaymentProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetMerchantPaymentProfileResponse" message="tns:IService_GetMerchantPaymentProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentTopupByPayBills">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertAgentTopupByPayBills" message="tns:IService_insertAgentTopupByPayBills_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertAgentTopupByPayBillsResponse" message="tns:IService_insertAgentTopupByPayBills_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantTransactionById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetMerchantTransactionById" message="tns:IService_GetMerchantTransactionById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetMerchantTransactionByIdResponse" message="tns:IService_GetMerchantTransactionById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateC2BMerchantTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateC2BMerchantTransaction" message="tns:IService_UpdateC2BMerchantTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateC2BMerchantTransactionResponse" message="tns:IService_UpdateC2BMerchantTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAuthentication">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAuthentication" message="tns:IService_getAuthentication_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAuthenticationResponse" message="tns:IService_getAuthentication_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAgentUserLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAgentUserLogin" message="tns:IService_getAgentUserLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAgentUserLoginResponse" message="tns:IService_getAgentUserLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSlipTemplate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getSlipTemplate" message="tns:IService_getSlipTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getSlipTemplateResponse" message="tns:IService_getSlipTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTodayTxnCountAmt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getTodayTxnCountAmt" message="tns:IService_getTodayTxnCountAmt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getTodayTxnCountAmtResponse" message="tns:IService_getTodayTxnCountAmt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMacAddressList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getMacAddressList" message="tns:IService_getMacAddressList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getMacAddressListResponse" message="tns:IService_getMacAddressList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateIspaired">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/updateIspaired" message="tns:IService_updateIspaired_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/updateIspairedResponse" message="tns:IService_updateIspaired_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBranchTerminal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertBranchTerminal" message="tns:IService_InsertBranchTerminal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertBranchTerminalResponse" message="tns:IService_InsertBranchTerminal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDevice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateDevice" message="tns:IService_UpdateDevice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateDeviceResponse" message="tns:IService_UpdateDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIsPC">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateIsPC" message="tns:IService_UpdateIsPC_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateIsPCResponse" message="tns:IService_UpdateIsPC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBranchTerminalID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getBranchTerminalID" message="tns:IService_getBranchTerminalID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getBranchTerminalIDResponse" message="tns:IService_getBranchTerminalID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getInquiry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getInquiry" message="tns:IService_getInquiry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getInquiryResponse" message="tns:IService_getInquiry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getInquiryReq">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getInquiryReq" message="tns:IService_getInquiryReq_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getInquiryReqResponse" message="tns:IService_getInquiryReq_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAgentNameByAgentCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getAgentNameByAgentCode" message="tns:IService_getAgentNameByAgentCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getAgentNameByAgentCodeResponse" message="tns:IService_getAgentNameByAgentCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertAgentUserLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertAgentUserLog" message="tns:IService_InsertAgentUserLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertAgentUserLogResponse" message="tns:IService_InsertAgentUserLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addFund2OneStopPlus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addFund2OneStopPlus" message="tns:IService_addFund2OneStopPlus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addFund2OneStopPlusResponse" message="tns:IService_addFund2OneStopPlus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBalance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getBalance" message="tns:IService_getBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getBalanceResponse" message="tns:IService_getBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmUpdate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ConfirmUpdate" message="tns:IService_ConfirmUpdate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ConfirmUpdateResponse" message="tns:IService_ConfirmUpdate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerAndInvoiceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCustomerAndInvoiceInfo" message="tns:IService_getCustomerAndInvoiceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCustomerAndInvoiceInfoResponse" message="tns:IService_getCustomerAndInvoiceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertInvoice" message="tns:IService_insertInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertInvoiceResponse" message="tns:IService_insertInvoice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionByMsgID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getTransactionByMsgID" message="tns:IService_getTransactionByMsgID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getTransactionByMsgIDResponse" message="tns:IService_getTransactionByMsgID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMerchantTransactionByMsgID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getMerchantTransactionByMsgID" message="tns:IService_getMerchantTransactionByMsgID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getMerchantTransactionByMsgIDResponse" message="tns:IService_getMerchantTransactionByMsgID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionByPolicyNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getTransactionByPolicyNo" message="tns:IService_getTransactionByPolicyNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getTransactionByPolicyNoResponse" message="tns:IService_getTransactionByPolicyNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTransactionLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertTransactionLog" message="tns:IService_InsertTransactionLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertTransactionLogResponse" message="tns:IService_InsertTransactionLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateError">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/updateError" message="tns:IService_updateError_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/updateErrorResponse" message="tns:IService_updateError_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateSMSStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/updateSMSStatus" message="tns:IService_updateSMSStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/updateSMSStatusResponse" message="tns:IService_updateSMSStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateSMSStatusforMerchant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/updateSMSStatusforMerchant" message="tns:IService_updateSMSStatusforMerchant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/updateSMSStatusforMerchantResponse" message="tns:IService_updateSMSStatusforMerchant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="resetCredit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/resetCredit" message="tns:IService_resetCredit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/resetCreditResponse" message="tns:IService_resetCredit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkBillerID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/checkBillerID" message="tns:IService_checkBillerID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/checkBillerIDResponse" message="tns:IService_checkBillerID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkBillerIDWithSourceName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/checkBillerIDWithSourceName" message="tns:IService_checkBillerIDWithSourceName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/checkBillerIDWithSourceNameResponse" message="tns:IService_checkBillerIDWithSourceName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBillerDetailByTaxId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getBillerDetailByTaxId" message="tns:IService_getBillerDetailByTaxId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getBillerDetailByTaxIdResponse" message="tns:IService_getBillerDetailByTaxId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRefDesc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getRefDesc" message="tns:IService_getRefDesc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getRefDescResponse" message="tns:IService_getRefDesc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateErrorWithAddingBalance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateErrorWithAddingBalance" message="tns:IService_UpdateErrorWithAddingBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateErrorWithAddingBalanceResponse" message="tns:IService_UpdateErrorWithAddingBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionlist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getTransactionlist" message="tns:IService_getTransactionlist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getTransactionlistResponse" message="tns:IService_getTransactionlist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchTransactionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/searchTransactionList" message="tns:IService_searchTransactionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/searchTransactionListResponse" message="tns:IService_searchTransactionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchTransactionListWithStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/searchTransactionListWithStatus" message="tns:IService_searchTransactionListWithStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/searchTransactionListWithStatusResponse" message="tns:IService_searchTransactionListWithStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchTransactionListReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/searchTransactionListReport" message="tns:IService_searchTransactionListReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/searchTransactionListReportResponse" message="tns:IService_searchTransactionListReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionSummaryReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getTransactionSummaryReport" message="tns:IService_getTransactionSummaryReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getTransactionSummaryReportResponse" message="tns:IService_getTransactionSummaryReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionListReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getTransactionListReport" message="tns:IService_getTransactionListReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getTransactionListReportResponse" message="tns:IService_getTransactionListReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertTransactionWithDeductBalance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertTransactionWithDeductBalance" message="tns:IService_insertTransactionWithDeductBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertTransactionWithDeductBalanceResponse" message="tns:IService_insertTransactionWithDeductBalance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertTransactionWithDeductBalanceAndSourceName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertTransactionWithDeductBalanceAndSourceName" message="tns:IService_insertTransactionWithDeductBalanceAndSourceName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertTransactionWithDeductBalanceAndSourceNameResponse" message="tns:IService_insertTransactionWithDeductBalanceAndSourceName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertTransaction" message="tns:IService_insertTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertTransactionResponse" message="tns:IService_insertTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertTransactionWithSourceName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertTransactionWithSourceName" message="tns:IService_insertTransactionWithSourceName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertTransactionWithSourceNameResponse" message="tns:IService_insertTransactionWithSourceName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkTelenoreTimeInterval">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/checkTelenoreTimeInterval" message="tns:IService_checkTelenoreTimeInterval_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/checkTelenoreTimeIntervalResponse" message="tns:IService_checkTelenoreTimeInterval_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTerminal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddTerminal" message="tns:IService_AddTerminal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddTerminalResponse" message="tns:IService_AddTerminal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getTransactionDetail" message="tns:IService_getTransactionDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getTransactionDetailResponse" message="tns:IService_getTransactionDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBillerListByAgentCodeAndCatID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getBillerListByAgentCodeAndCatID" message="tns:IService_getBillerListByAgentCodeAndCatID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getBillerListByAgentCodeAndCatIDResponse" message="tns:IService_getBillerListByAgentCodeAndCatID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBillerList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getBillerList" message="tns:IService_getBillerList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getBillerListResponse" message="tns:IService_getBillerList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMapTaxIDByTaxID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getMapTaxIDByTaxID" message="tns:IService_getMapTaxIDByTaxID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getMapTaxIDByTaxIDResponse" message="tns:IService_getMapTaxIDByTaxID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBillerServiceFeeByProfileId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getBillerServiceFeeByProfileId" message="tns:IService_getBillerServiceFeeByProfileId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getBillerServiceFeeByProfileIdResponse" message="tns:IService_getBillerServiceFeeByProfileId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBillerFeeProfileByAgentId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getBillerFeeProfileByAgentId" message="tns:IService_getBillerFeeProfileByAgentId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getBillerFeeProfileByAgentIdResponse" message="tns:IService_getBillerFeeProfileByAgentId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="get_Denomination">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/get_Denomination" message="tns:IService_get_Denomination_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/get_DenominationResponse" message="tns:IService_get_Denomination_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBatchlist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getBatchlist" message="tns:IService_getBatchlist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getBatchlistResponse" message="tns:IService_getBatchlist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTownshiplist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getTownshiplist" message="tns:IService_getTownshiplist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getTownshiplistResponse" message="tns:IService_getTownshiplist_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBatchDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getBatchDetail" message="tns:IService_getBatchDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getBatchDetailResponse" message="tns:IService_getBatchDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCloseShiftDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCloseShiftDetail" message="tns:IService_getCloseShiftDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCloseShiftDetailResponse" message="tns:IService_getCloseShiftDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCloseShift">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/getCloseShift" message="tns:IService_getCloseShift_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/getCloseShiftResponse" message="tns:IService_getCloseShift_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ChangePassword" message="tns:IService_ChangePassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ChangePasswordResponse" message="tns:IService_ChangePassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ResetPassword" message="tns:IService_ResetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ResetPasswordResponse" message="tns:IService_ResetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentTopupBy1Stop">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertAgentTopupBy1Stop" message="tns:IService_insertAgentTopupBy1Stop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertAgentTopupBy1StopResponse" message="tns:IService_insertAgentTopupBy1Stop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentTopupByMercyCrops">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertAgentTopupByMercyCrops" message="tns:IService_insertAgentTopupByMercyCrops_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertAgentTopupByMercyCropsResponse" message="tns:IService_insertAgentTopupByMercyCrops_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentTopupMercyCrop">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertAgentTopupMercyCrop" message="tns:IService_insertAgentTopupMercyCrop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertAgentTopupMercyCropResponse" message="tns:IService_insertAgentTopupMercyCrop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentTopupLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/insertAgentTopupLog" message="tns:IService_insertAgentTopupLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/insertAgentTopupLogResponse" message="tns:IService_insertAgentTopupLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateAgentTopupMercycrop">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/updateAgentTopupMercycrop" message="tns:IService_updateAgentTopupMercycrop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/updateAgentTopupMercycropResponse" message="tns:IService_updateAgentTopupMercycrop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="minusChannelPlusAmt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/minusChannelPlusAmt" message="tns:IService_minusChannelPlusAmt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/minusChannelPlusAmtResponse" message="tns:IService_minusChannelPlusAmt_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="minusAgentAmt">
+      <soap:operation soapAction="http://tempuri.org/IService/minusAgentAmt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTxn">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTxn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNewAgentCode">
+      <soap:operation soapAction="http://tempuri.org/IService/getNewAgentCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertAgent">
+      <soap:operation soapAction="http://tempuri.org/IService/insertAgent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBillerNameList">
+      <soap:operation soapAction="http://tempuri.org/IService/getBillerNameList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentFee">
+      <soap:operation soapAction="http://tempuri.org/IService/insertAgentFee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentChannel">
+      <soap:operation soapAction="http://tempuri.org/IService/insertAgentChannel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFeesProfileList">
+      <soap:operation soapAction="http://tempuri.org/IService/getFeesProfileList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNewBranchCode">
+      <soap:operation soapAction="http://tempuri.org/IService/getNewBranchCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentBranch">
+      <soap:operation soapAction="http://tempuri.org/IService/insertAgentBranch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerAgentUser">
+      <soap:operation soapAction="http://tempuri.org/IService/registerAgentUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDuplicateAgentUser">
+      <soap:operation soapAction="http://tempuri.org/IService/IsDuplicateAgentUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_SystemConfigByKey">
+      <soap:operation soapAction="http://tempuri.org/IService/get_SystemConfigByKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDuplicatedMobile">
+      <soap:operation soapAction="http://tempuri.org/IService/IsDuplicatedMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOauthToken">
+      <soap:operation soapAction="http://tempuri.org/IService/getOauthToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsDuplicatedCNPYESCPayment">
+      <soap:operation soapAction="http://tempuri.org/IService/IsDuplicatedCNPYESCPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMeterBillerByTownshipCode">
+      <soap:operation soapAction="http://tempuri.org/IService/getMeterBillerByTownshipCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMeterDivisionList">
+      <soap:operation soapAction="http://tempuri.org/IService/getMeterDivisionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDivisionTownshipBranchList">
+      <soap:operation soapAction="http://tempuri.org/IService/GetDivisionTownshipBranchList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertRemittanceNotification">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertRemittanceNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartnerUserListByBranchCode">
+      <soap:operation soapAction="http://tempuri.org/IService/GetPartnerUserListByBranchCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRemittanceNotification">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateRemittanceNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemittanceNotification">
+      <soap:operation soapAction="http://tempuri.org/IService/GetRemittanceNotification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBranchByUserID">
+      <soap:operation soapAction="http://tempuri.org/IService/GetBranchByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotificationList">
+      <soap:operation soapAction="http://tempuri.org/IService/GetNotificationList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmUpdateCashOut">
+      <soap:operation soapAction="http://tempuri.org/IService/ConfirmUpdateCashOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkAgentInfoforCashOut">
+      <soap:operation soapAction="http://tempuri.org/IService/checkAgentInfoforCashOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get663FeesByAmount">
+      <soap:operation soapAction="http://tempuri.org/IService/get663FeesByAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableBalance">
+      <soap:operation soapAction="http://tempuri.org/IService/getAvailableBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMaHaOneStopPlusPartnerFirstUser">
+      <soap:operation soapAction="http://tempuri.org/IService/getMaHaOneStopPlusPartnerFirstUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAgentUserUniqueIDByLoginID">
+      <soap:operation soapAction="http://tempuri.org/IService/getAgentUserUniqueIDByLoginID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertUpdateOTP">
+      <soap:operation soapAction="http://tempuri.org/IService/insertUpdateOTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertUpdateOTPV2">
+      <soap:operation soapAction="http://tempuri.org/IService/insertUpdateOTPV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAgentProfile">
+      <soap:operation soapAction="http://tempuri.org/IService/updateAgentProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAgentProfileV2">
+      <soap:operation soapAction="http://tempuri.org/IService/updateAgentProfileV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParamiGasDivisionList">
+      <soap:operation soapAction="http://tempuri.org/IService/GetParamiGasDivisionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParamiGasTownshipList">
+      <soap:operation soapAction="http://tempuri.org/IService/GetParamiGasTownshipList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransctionListForCM">
+      <soap:operation soapAction="http://tempuri.org/IService/getTransctionListForCM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryList">
+      <soap:operation soapAction="http://tempuri.org/IService/getCategoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryAndBillerByAgentId">
+      <soap:operation soapAction="http://tempuri.org/IService/getCategoryAndBillerByAgentId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMerchantTransaction">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertMerchantTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMerchantTransaction">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateMerchantTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCBPayMerchantTransaction">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateCBPayMerchantTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCardTransaction">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertCardTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidCardTransaction">
+      <soap:operation soapAction="http://tempuri.org/IService/VoidCardTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBatchNBatchNo">
+      <soap:operation soapAction="http://tempuri.org/IService/GetBatchNBatchNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIssuerInsId">
+      <soap:operation soapAction="http://tempuri.org/IService/GetIssuerInsId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCardTransactionByMerchentTransactionId">
+      <soap:operation soapAction="http://tempuri.org/IService/GetCardTransactionByMerchentTransactionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIsMerchant">
+      <soap:operation soapAction="http://tempuri.org/IService/CheckIsMerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantPaymentProfile">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMerchantPaymentProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentTopupByPayBills">
+      <soap:operation soapAction="http://tempuri.org/IService/insertAgentTopupByPayBills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMerchantTransactionById">
+      <soap:operation soapAction="http://tempuri.org/IService/GetMerchantTransactionById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateC2BMerchantTransaction">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateC2BMerchantTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAuthentication">
+      <soap:operation soapAction="http://tempuri.org/IService/getAuthentication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAgentUserLogin">
+      <soap:operation soapAction="http://tempuri.org/IService/getAgentUserLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSlipTemplate">
+      <soap:operation soapAction="http://tempuri.org/IService/getSlipTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTodayTxnCountAmt">
+      <soap:operation soapAction="http://tempuri.org/IService/getTodayTxnCountAmt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMacAddressList">
+      <soap:operation soapAction="http://tempuri.org/IService/getMacAddressList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateIspaired">
+      <soap:operation soapAction="http://tempuri.org/IService/updateIspaired" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBranchTerminal">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertBranchTerminal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDevice">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateDevice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIsPC">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateIsPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBranchTerminalID">
+      <soap:operation soapAction="http://tempuri.org/IService/getBranchTerminalID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInquiry">
+      <soap:operation soapAction="http://tempuri.org/IService/getInquiry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInquiryReq">
+      <soap:operation soapAction="http://tempuri.org/IService/getInquiryReq" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAgentNameByAgentCode">
+      <soap:operation soapAction="http://tempuri.org/IService/getAgentNameByAgentCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertAgentUserLog">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertAgentUserLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addFund2OneStopPlus">
+      <soap:operation soapAction="http://tempuri.org/IService/addFund2OneStopPlus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBalance">
+      <soap:operation soapAction="http://tempuri.org/IService/getBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmUpdate">
+      <soap:operation soapAction="http://tempuri.org/IService/ConfirmUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerAndInvoiceInfo">
+      <soap:operation soapAction="http://tempuri.org/IService/getCustomerAndInvoiceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertInvoice">
+      <soap:operation soapAction="http://tempuri.org/IService/insertInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionByMsgID">
+      <soap:operation soapAction="http://tempuri.org/IService/getTransactionByMsgID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMerchantTransactionByMsgID">
+      <soap:operation soapAction="http://tempuri.org/IService/getMerchantTransactionByMsgID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionByPolicyNo">
+      <soap:operation soapAction="http://tempuri.org/IService/getTransactionByPolicyNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTransactionLog">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertTransactionLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateError">
+      <soap:operation soapAction="http://tempuri.org/IService/updateError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSMSStatus">
+      <soap:operation soapAction="http://tempuri.org/IService/updateSMSStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSMSStatusforMerchant">
+      <soap:operation soapAction="http://tempuri.org/IService/updateSMSStatusforMerchant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetCredit">
+      <soap:operation soapAction="http://tempuri.org/IService/resetCredit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkBillerID">
+      <soap:operation soapAction="http://tempuri.org/IService/checkBillerID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkBillerIDWithSourceName">
+      <soap:operation soapAction="http://tempuri.org/IService/checkBillerIDWithSourceName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBillerDetailByTaxId">
+      <soap:operation soapAction="http://tempuri.org/IService/getBillerDetailByTaxId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRefDesc">
+      <soap:operation soapAction="http://tempuri.org/IService/getRefDesc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateErrorWithAddingBalance">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateErrorWithAddingBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionlist">
+      <soap:operation soapAction="http://tempuri.org/IService/getTransactionlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchTransactionList">
+      <soap:operation soapAction="http://tempuri.org/IService/searchTransactionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchTransactionListWithStatus">
+      <soap:operation soapAction="http://tempuri.org/IService/searchTransactionListWithStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchTransactionListReport">
+      <soap:operation soapAction="http://tempuri.org/IService/searchTransactionListReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionSummaryReport">
+      <soap:operation soapAction="http://tempuri.org/IService/getTransactionSummaryReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionListReport">
+      <soap:operation soapAction="http://tempuri.org/IService/getTransactionListReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertTransactionWithDeductBalance">
+      <soap:operation soapAction="http://tempuri.org/IService/insertTransactionWithDeductBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertTransactionWithDeductBalanceAndSourceName">
+      <soap:operation soapAction="http://tempuri.org/IService/insertTransactionWithDeductBalanceAndSourceName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertTransaction">
+      <soap:operation soapAction="http://tempuri.org/IService/insertTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertTransactionWithSourceName">
+      <soap:operation soapAction="http://tempuri.org/IService/insertTransactionWithSourceName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkTelenoreTimeInterval">
+      <soap:operation soapAction="http://tempuri.org/IService/checkTelenoreTimeInterval" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTerminal">
+      <soap:operation soapAction="http://tempuri.org/IService/AddTerminal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransactionDetail">
+      <soap:operation soapAction="http://tempuri.org/IService/getTransactionDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBillerListByAgentCodeAndCatID">
+      <soap:operation soapAction="http://tempuri.org/IService/getBillerListByAgentCodeAndCatID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBillerList">
+      <soap:operation soapAction="http://tempuri.org/IService/getBillerList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMapTaxIDByTaxID">
+      <soap:operation soapAction="http://tempuri.org/IService/getMapTaxIDByTaxID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBillerServiceFeeByProfileId">
+      <soap:operation soapAction="http://tempuri.org/IService/getBillerServiceFeeByProfileId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBillerFeeProfileByAgentId">
+      <soap:operation soapAction="http://tempuri.org/IService/getBillerFeeProfileByAgentId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_Denomination">
+      <soap:operation soapAction="http://tempuri.org/IService/get_Denomination" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBatchlist">
+      <soap:operation soapAction="http://tempuri.org/IService/getBatchlist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTownshiplist">
+      <soap:operation soapAction="http://tempuri.org/IService/getTownshiplist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBatchDetail">
+      <soap:operation soapAction="http://tempuri.org/IService/getBatchDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCloseShiftDetail">
+      <soap:operation soapAction="http://tempuri.org/IService/getCloseShiftDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCloseShift">
+      <soap:operation soapAction="http://tempuri.org/IService/getCloseShift" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/IService/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="http://tempuri.org/IService/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentTopupBy1Stop">
+      <soap:operation soapAction="http://tempuri.org/IService/insertAgentTopupBy1Stop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentTopupByMercyCrops">
+      <soap:operation soapAction="http://tempuri.org/IService/insertAgentTopupByMercyCrops" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentTopupMercyCrop">
+      <soap:operation soapAction="http://tempuri.org/IService/insertAgentTopupMercyCrop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertAgentTopupLog">
+      <soap:operation soapAction="http://tempuri.org/IService/insertAgentTopupLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateAgentTopupMercycrop">
+      <soap:operation soapAction="http://tempuri.org/IService/updateAgentTopupMercycrop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="minusChannelPlusAmt">
+      <soap:operation soapAction="http://tempuri.org/IService/minusChannelPlusAmt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://localhost:11241/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

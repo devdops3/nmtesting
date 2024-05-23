@@ -1,0 +1,1813 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="MobileLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MobileLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MobileLoginResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServerLogResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRepaymentInquiryInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRepaymentInquiryInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRepaymentInquiryInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRepaymentComfirmation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRepaymentComfirmationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRepaymentComfirmationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDisbursement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDisbursementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddDisbursementResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSurveyVillageForMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSurveyVillageForMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddSurveyVillageForMobileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTownSurveyForMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTownSurveyForMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddTownSurveyForMobileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSMESurveyForMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddSMESurveyForMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddSMESurveyForMobileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCustRegVendorForMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCustRegVendorForMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddCustRegVendorForMobileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCustRegFarmerForMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCustRegFarmerForMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddCustRegFarmerForMobileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddLoanApplicationFarmerForMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddLoanApplicationFarmerForMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddLoanApplicationFarmerForMobileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddLoanApplicationVendorForMobile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmlData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddLoanApplicationVendorForMobileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddLoanApplicationVendorForMobileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVerifiedSurveySME">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmldata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVerifiedSurveySMEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVerifiedSurveySMEResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUserDataByBranch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmldata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUserDataByBranchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUserDataByBranchResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMasterData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmldata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMasterDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMasterDataResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllLoanProductType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmldata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllLoanProductTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllLoanProductTypeResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDisbursementData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmldata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDisbursementDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllDisbursementDataResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllLoanProductTypeItem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmldata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllLoanProductTypeItemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllLoanProductTypeItemResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMicroLoan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmldata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMicroLoanResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMicroLoanResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMicroTerm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmldata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMicroTermResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMicroTermResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVerifiedSurveyTown">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmldata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVerifiedSurveyTownResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVerifiedSurveyTownResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVerifiedSurveyFarmVillage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmldata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVerifiedSurveyFarmVillageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVerifiedSurveyFarmVillageResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVerifiedCustRegFarmer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmldata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVerifiedCustRegFarmerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVerifiedCustRegFarmerResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVerifiedCustRegVendor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmldata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVerifiedCustRegVendorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVerifiedCustRegVendorResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVerifiedLoanAppFarmer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmldata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVerifiedLoanAppFarmerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVerifiedLoanAppFarmerResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVerifiedLoanAppVendor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="xmldata" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVerifiedLoanAppVendorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVerifiedLoanAppVendorResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserDataForFingerPrint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="para" type="tns:RequestParameter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RequestParameter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedUserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Version" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MessageID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SlipNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="InterestAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="PenalFeesAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="HashValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DueDate" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="LoanType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Desc" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LoanAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="SavingAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContractNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LoanNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiptNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUserDataForFingerPrintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserDataForFingerPrintResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DesktopLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="tns:UserAccount" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UserAccount">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FingerPrint" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="tns:UserType" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="UserType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Customer" />
+          <s:enumeration value="User" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="DesktopLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DesktopLoginResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifiedCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="tns:UserAccount" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifiedCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerifiedCustomerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerDataForFingerPrint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="para" type="tns:RequestParameter" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerDataForFingerPrintResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCustomerDataForFingerPrintResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserForDesktop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="tns:User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="User">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FingerPrint1" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="FingerPrint2" type="s:base64Binary" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsMultiUser" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsLogon" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsNextLogonPasswordChanged" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanPasswordChanged" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanPasswordExpired" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPasswordExpired" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordExpiredDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAccountDisabled" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="FailedPasswordAttemptCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FailedPasswordAttemptWindowStart" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastAccountDisabledDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastLogInDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastLogOffDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TS" type="tns:TimeSpan" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedUserId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedUserId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TimeSpan" />
+      <s:element name="AddUserForDesktopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUserForDesktopResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddCustomerForDesktop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer" type="tns:Customer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Customer">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RdgID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FingerPrint" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="BranchCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Active" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="TS" type="tns:TimeSpan" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedUserId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="UpdatedUserId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameInMyanmar" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAwbaCustomer" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DOB" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Age" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="HasSmartPhone" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhoneNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoOfFamilyMem" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="FoodLiving" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoOfStudent" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SchoolYearCost" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAcres" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="NRC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FatherName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remark" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="InitialCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameOnly" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATE_TIME" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="OccupationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TownshipCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VillageCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoOfEmployes" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoOfCustomer" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberLevelCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FirstLoanDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="NoOfLoans" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="HubCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="HighestDeposit" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentDeposit" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAmtLoans" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CurrentLoanOutstanding" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="OnTimePayment" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="CloseDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="OverPay" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="UnderPay" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="SMETypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SMEGroupCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StoreLocationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VendorTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TradeTypeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VerifyStatusBranch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VerifyStatusHub" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VSBranchUserId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VSHubUserId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VSBranchDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="VSHubDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="FacePic" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Signature" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="NRCBackPic" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="NRCFrontPic" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="LandTitleDeedPic" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="HouseHoldRegisPic" type="s:base64Binary" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddCustomerForDesktopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddCustomerForDesktopResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomerForDesktop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customer" type="tns:Customer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCustomerForDesktopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCustomerForDesktopResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerVerifiedLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="branchCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fingerPrint" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerVerifiedLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerVerifiedLoginResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="para" type="tns:User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddUserResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddtestData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="serverName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ipAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddtestDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddtestDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MobileLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:MobileLogin" />
+  </wsdl:message>
+  <wsdl:message name="MobileLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:MobileLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerLogSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerLog" />
+  </wsdl:message>
+  <wsdl:message name="GetServerLogSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRepaymentInquiryInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRepaymentInquiryInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetRepaymentInquiryInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRepaymentInquiryInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRepaymentComfirmationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRepaymentComfirmation" />
+  </wsdl:message>
+  <wsdl:message name="GetRepaymentComfirmationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRepaymentComfirmationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDisbursementSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDisbursement" />
+  </wsdl:message>
+  <wsdl:message name="AddDisbursementSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDisbursementResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSurveyVillageForMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSurveyVillageForMobile" />
+  </wsdl:message>
+  <wsdl:message name="AddSurveyVillageForMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSurveyVillageForMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTownSurveyForMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTownSurveyForMobile" />
+  </wsdl:message>
+  <wsdl:message name="AddTownSurveyForMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTownSurveyForMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddSMESurveyForMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:AddSMESurveyForMobile" />
+  </wsdl:message>
+  <wsdl:message name="AddSMESurveyForMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:AddSMESurveyForMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCustRegVendorForMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCustRegVendorForMobile" />
+  </wsdl:message>
+  <wsdl:message name="AddCustRegVendorForMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCustRegVendorForMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCustRegFarmerForMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCustRegFarmerForMobile" />
+  </wsdl:message>
+  <wsdl:message name="AddCustRegFarmerForMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCustRegFarmerForMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddLoanApplicationFarmerForMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:AddLoanApplicationFarmerForMobile" />
+  </wsdl:message>
+  <wsdl:message name="AddLoanApplicationFarmerForMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:AddLoanApplicationFarmerForMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddLoanApplicationVendorForMobileSoapIn">
+    <wsdl:part name="parameters" element="tns:AddLoanApplicationVendorForMobile" />
+  </wsdl:message>
+  <wsdl:message name="AddLoanApplicationVendorForMobileSoapOut">
+    <wsdl:part name="parameters" element="tns:AddLoanApplicationVendorForMobileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVerifiedSurveySMESoapIn">
+    <wsdl:part name="parameters" element="tns:GetVerifiedSurveySME" />
+  </wsdl:message>
+  <wsdl:message name="GetVerifiedSurveySMESoapOut">
+    <wsdl:part name="parameters" element="tns:GetVerifiedSurveySMEResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserDataByBranchSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUserDataByBranch" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUserDataByBranchSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUserDataByBranchResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMasterDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMasterData" />
+  </wsdl:message>
+  <wsdl:message name="GetMasterDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMasterDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllLoanProductTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllLoanProductType" />
+  </wsdl:message>
+  <wsdl:message name="GetAllLoanProductTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllLoanProductTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDisbursementDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllDisbursementData" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDisbursementDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllDisbursementDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllLoanProductTypeItemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllLoanProductTypeItem" />
+  </wsdl:message>
+  <wsdl:message name="GetAllLoanProductTypeItemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllLoanProductTypeItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMicroLoanSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMicroLoan" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMicroLoanSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMicroLoanResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMicroTermSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMicroTerm" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMicroTermSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMicroTermResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVerifiedSurveyTownSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVerifiedSurveyTown" />
+  </wsdl:message>
+  <wsdl:message name="GetVerifiedSurveyTownSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVerifiedSurveyTownResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVerifiedSurveyFarmVillageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVerifiedSurveyFarmVillage" />
+  </wsdl:message>
+  <wsdl:message name="GetVerifiedSurveyFarmVillageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVerifiedSurveyFarmVillageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVerifiedCustRegFarmerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVerifiedCustRegFarmer" />
+  </wsdl:message>
+  <wsdl:message name="GetVerifiedCustRegFarmerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVerifiedCustRegFarmerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVerifiedCustRegVendorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVerifiedCustRegVendor" />
+  </wsdl:message>
+  <wsdl:message name="GetVerifiedCustRegVendorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVerifiedCustRegVendorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVerifiedLoanAppFarmerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVerifiedLoanAppFarmer" />
+  </wsdl:message>
+  <wsdl:message name="GetVerifiedLoanAppFarmerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVerifiedLoanAppFarmerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVerifiedLoanAppVendorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVerifiedLoanAppVendor" />
+  </wsdl:message>
+  <wsdl:message name="GetVerifiedLoanAppVendorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVerifiedLoanAppVendorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataForFingerPrintSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserDataForFingerPrint" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDataForFingerPrintSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserDataForFingerPrintResponse" />
+  </wsdl:message>
+  <wsdl:message name="DesktopLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:DesktopLogin" />
+  </wsdl:message>
+  <wsdl:message name="DesktopLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:DesktopLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifiedCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifiedCustomer" />
+  </wsdl:message>
+  <wsdl:message name="VerifiedCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifiedCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDataForFingerPrintSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomerDataForFingerPrint" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDataForFingerPrintSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerDataForFingerPrintResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserForDesktopSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserForDesktop" />
+  </wsdl:message>
+  <wsdl:message name="AddUserForDesktopSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserForDesktopResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddCustomerForDesktopSoapIn">
+    <wsdl:part name="parameters" element="tns:AddCustomerForDesktop" />
+  </wsdl:message>
+  <wsdl:message name="AddCustomerForDesktopSoapOut">
+    <wsdl:part name="parameters" element="tns:AddCustomerForDesktopResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerForDesktopSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerForDesktop" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerForDesktopSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCustomerForDesktopResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerVerifiedLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerVerifiedLogin" />
+  </wsdl:message>
+  <wsdl:message name="CustomerVerifiedLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerVerifiedLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="AddUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddtestDataSoapIn">
+    <wsdl:part name="parameters" element="tns:AddtestData" />
+  </wsdl:message>
+  <wsdl:message name="AddtestDataSoapOut">
+    <wsdl:part name="parameters" element="tns:AddtestDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RouteWebServiceSoap">
+    <wsdl:operation name="MobileLogin">
+      <wsdl:input message="tns:MobileLoginSoapIn" />
+      <wsdl:output message="tns:MobileLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerLog">
+      <wsdl:input message="tns:GetServerLogSoapIn" />
+      <wsdl:output message="tns:GetServerLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepaymentInquiryInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Repayment Inquiry Request and Response</wsdl:documentation>
+      <wsdl:input message="tns:GetRepaymentInquiryInfoSoapIn" />
+      <wsdl:output message="tns:GetRepaymentInquiryInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepaymentComfirmation">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Repayment Comfirmation Request and Response</wsdl:documentation>
+      <wsdl:input message="tns:GetRepaymentComfirmationSoapIn" />
+      <wsdl:output message="tns:GetRepaymentComfirmationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDisbursement">
+      <wsdl:input message="tns:AddDisbursementSoapIn" />
+      <wsdl:output message="tns:AddDisbursementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSurveyVillageForMobile">
+      <wsdl:input message="tns:AddSurveyVillageForMobileSoapIn" />
+      <wsdl:output message="tns:AddSurveyVillageForMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTownSurveyForMobile">
+      <wsdl:input message="tns:AddTownSurveyForMobileSoapIn" />
+      <wsdl:output message="tns:AddTownSurveyForMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSMESurveyForMobile">
+      <wsdl:input message="tns:AddSMESurveyForMobileSoapIn" />
+      <wsdl:output message="tns:AddSMESurveyForMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustRegVendorForMobile">
+      <wsdl:input message="tns:AddCustRegVendorForMobileSoapIn" />
+      <wsdl:output message="tns:AddCustRegVendorForMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustRegFarmerForMobile">
+      <wsdl:input message="tns:AddCustRegFarmerForMobileSoapIn" />
+      <wsdl:output message="tns:AddCustRegFarmerForMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLoanApplicationFarmerForMobile">
+      <wsdl:input message="tns:AddLoanApplicationFarmerForMobileSoapIn" />
+      <wsdl:output message="tns:AddLoanApplicationFarmerForMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLoanApplicationVendorForMobile">
+      <wsdl:input message="tns:AddLoanApplicationVendorForMobileSoapIn" />
+      <wsdl:output message="tns:AddLoanApplicationVendorForMobileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedSurveySME">
+      <wsdl:input message="tns:GetVerifiedSurveySMESoapIn" />
+      <wsdl:output message="tns:GetVerifiedSurveySMESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserDataByBranch">
+      <wsdl:input message="tns:GetAllUserDataByBranchSoapIn" />
+      <wsdl:output message="tns:GetAllUserDataByBranchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterData">
+      <wsdl:input message="tns:GetMasterDataSoapIn" />
+      <wsdl:output message="tns:GetMasterDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLoanProductType">
+      <wsdl:input message="tns:GetAllLoanProductTypeSoapIn" />
+      <wsdl:output message="tns:GetAllLoanProductTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDisbursementData">
+      <wsdl:input message="tns:GetAllDisbursementDataSoapIn" />
+      <wsdl:output message="tns:GetAllDisbursementDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLoanProductTypeItem">
+      <wsdl:input message="tns:GetAllLoanProductTypeItemSoapIn" />
+      <wsdl:output message="tns:GetAllLoanProductTypeItemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMicroLoan">
+      <wsdl:input message="tns:GetAllMicroLoanSoapIn" />
+      <wsdl:output message="tns:GetAllMicroLoanSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMicroTerm">
+      <wsdl:input message="tns:GetAllMicroTermSoapIn" />
+      <wsdl:output message="tns:GetAllMicroTermSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedSurveyTown">
+      <wsdl:input message="tns:GetVerifiedSurveyTownSoapIn" />
+      <wsdl:output message="tns:GetVerifiedSurveyTownSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedSurveyFarmVillage">
+      <wsdl:input message="tns:GetVerifiedSurveyFarmVillageSoapIn" />
+      <wsdl:output message="tns:GetVerifiedSurveyFarmVillageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedCustRegFarmer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetVerifiedCustRegFarmer</wsdl:documentation>
+      <wsdl:input message="tns:GetVerifiedCustRegFarmerSoapIn" />
+      <wsdl:output message="tns:GetVerifiedCustRegFarmerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedCustRegVendor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetVerifiedCustRegVendor</wsdl:documentation>
+      <wsdl:input message="tns:GetVerifiedCustRegVendorSoapIn" />
+      <wsdl:output message="tns:GetVerifiedCustRegVendorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedLoanAppFarmer">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetVerifiedLoanAppFarmer</wsdl:documentation>
+      <wsdl:input message="tns:GetVerifiedLoanAppFarmerSoapIn" />
+      <wsdl:output message="tns:GetVerifiedLoanAppFarmerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedLoanAppVendor">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetVerifiedLoanAppVendor</wsdl:documentation>
+      <wsdl:input message="tns:GetVerifiedLoanAppVendorSoapIn" />
+      <wsdl:output message="tns:GetVerifiedLoanAppVendorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDataForFingerPrint">
+      <wsdl:input message="tns:GetUserDataForFingerPrintSoapIn" />
+      <wsdl:output message="tns:GetUserDataForFingerPrintSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DesktopLogin">
+      <wsdl:input message="tns:DesktopLoginSoapIn" />
+      <wsdl:output message="tns:DesktopLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifiedCustomer">
+      <wsdl:input message="tns:VerifiedCustomerSoapIn" />
+      <wsdl:output message="tns:VerifiedCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDataForFingerPrint">
+      <wsdl:input message="tns:GetCustomerDataForFingerPrintSoapIn" />
+      <wsdl:output message="tns:GetCustomerDataForFingerPrintSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserForDesktop">
+      <wsdl:input message="tns:AddUserForDesktopSoapIn" />
+      <wsdl:output message="tns:AddUserForDesktopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomerForDesktop">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">CustId</wsdl:documentation>
+      <wsdl:input message="tns:AddCustomerForDesktopSoapIn" />
+      <wsdl:output message="tns:AddCustomerForDesktopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerForDesktop">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">CustId</wsdl:documentation>
+      <wsdl:input message="tns:UpdateCustomerForDesktopSoapIn" />
+      <wsdl:output message="tns:UpdateCustomerForDesktopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerVerifiedLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">GetVerifiedCustomer</wsdl:documentation>
+      <wsdl:input message="tns:CustomerVerifiedLoginSoapIn" />
+      <wsdl:output message="tns:CustomerVerifiedLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">User</wsdl:documentation>
+      <wsdl:input message="tns:AddUserSoapIn" />
+      <wsdl:output message="tns:AddUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddtestData">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Testing</wsdl:documentation>
+      <wsdl:input message="tns:AddtestDataSoapIn" />
+      <wsdl:output message="tns:AddtestDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RouteWebServiceSoap" type="tns:RouteWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MobileLogin">
+      <soap:operation soapAction="http://tempuri.org/MobileLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerLog">
+      <soap:operation soapAction="http://tempuri.org/GetServerLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepaymentInquiryInfo">
+      <soap:operation soapAction="http://tempuri.org/GetRepaymentInquiryInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepaymentComfirmation">
+      <soap:operation soapAction="http://tempuri.org/GetRepaymentComfirmation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDisbursement">
+      <soap:operation soapAction="http://tempuri.org/AddDisbursement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSurveyVillageForMobile">
+      <soap:operation soapAction="http://tempuri.org/AddSurveyVillageForMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTownSurveyForMobile">
+      <soap:operation soapAction="http://tempuri.org/AddTownSurveyForMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSMESurveyForMobile">
+      <soap:operation soapAction="http://tempuri.org/AddSMESurveyForMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustRegVendorForMobile">
+      <soap:operation soapAction="http://tempuri.org/AddCustRegVendorForMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustRegFarmerForMobile">
+      <soap:operation soapAction="http://tempuri.org/AddCustRegFarmerForMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLoanApplicationFarmerForMobile">
+      <soap:operation soapAction="http://tempuri.org/AddLoanApplicationFarmerForMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLoanApplicationVendorForMobile">
+      <soap:operation soapAction="http://tempuri.org/AddLoanApplicationVendorForMobile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedSurveySME">
+      <soap:operation soapAction="http://tempuri.org/GetVerifiedSurveySME" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserDataByBranch">
+      <soap:operation soapAction="http://tempuri.org/GetAllUserDataByBranch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterData">
+      <soap:operation soapAction="http://tempuri.org/GetMasterData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLoanProductType">
+      <soap:operation soapAction="http://tempuri.org/GetAllLoanProductType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDisbursementData">
+      <soap:operation soapAction="http://tempuri.org/GetAllDisbursementData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLoanProductTypeItem">
+      <soap:operation soapAction="http://tempuri.org/GetAllLoanProductTypeItem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMicroLoan">
+      <soap:operation soapAction="http://tempuri.org/GetAllMicroLoan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMicroTerm">
+      <soap:operation soapAction="http://tempuri.org/GetAllMicroTerm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedSurveyTown">
+      <soap:operation soapAction="http://tempuri.org/GetVerifiedSurveyTown" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedSurveyFarmVillage">
+      <soap:operation soapAction="http://tempuri.org/GetVerifiedSurveyFarmVillage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedCustRegFarmer">
+      <soap:operation soapAction="http://tempuri.org/GetVerifiedCustRegFarmer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedCustRegVendor">
+      <soap:operation soapAction="http://tempuri.org/GetVerifiedCustRegVendor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedLoanAppFarmer">
+      <soap:operation soapAction="http://tempuri.org/GetVerifiedLoanAppFarmer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedLoanAppVendor">
+      <soap:operation soapAction="http://tempuri.org/GetVerifiedLoanAppVendor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDataForFingerPrint">
+      <soap:operation soapAction="http://tempuri.org/GetUserDataForFingerPrint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DesktopLogin">
+      <soap:operation soapAction="http://tempuri.org/DesktopLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifiedCustomer">
+      <soap:operation soapAction="http://tempuri.org/VerifiedCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDataForFingerPrint">
+      <soap:operation soapAction="http://tempuri.org/GetCustomerDataForFingerPrint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserForDesktop">
+      <soap:operation soapAction="http://tempuri.org/AddUserForDesktop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomerForDesktop">
+      <soap:operation soapAction="http://tempuri.org/AddCustomerForDesktop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerForDesktop">
+      <soap:operation soapAction="http://tempuri.org/UpdateCustomerForDesktop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerVerifiedLogin">
+      <soap:operation soapAction="http://tempuri.org/CustomerVerifiedLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://tempuri.org/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddtestData">
+      <soap:operation soapAction="http://tempuri.org/AddtestData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RouteWebServiceSoap12" type="tns:RouteWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MobileLogin">
+      <soap12:operation soapAction="http://tempuri.org/MobileLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerLog">
+      <soap12:operation soapAction="http://tempuri.org/GetServerLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepaymentInquiryInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetRepaymentInquiryInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepaymentComfirmation">
+      <soap12:operation soapAction="http://tempuri.org/GetRepaymentComfirmation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDisbursement">
+      <soap12:operation soapAction="http://tempuri.org/AddDisbursement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSurveyVillageForMobile">
+      <soap12:operation soapAction="http://tempuri.org/AddSurveyVillageForMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTownSurveyForMobile">
+      <soap12:operation soapAction="http://tempuri.org/AddTownSurveyForMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSMESurveyForMobile">
+      <soap12:operation soapAction="http://tempuri.org/AddSMESurveyForMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustRegVendorForMobile">
+      <soap12:operation soapAction="http://tempuri.org/AddCustRegVendorForMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustRegFarmerForMobile">
+      <soap12:operation soapAction="http://tempuri.org/AddCustRegFarmerForMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLoanApplicationFarmerForMobile">
+      <soap12:operation soapAction="http://tempuri.org/AddLoanApplicationFarmerForMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLoanApplicationVendorForMobile">
+      <soap12:operation soapAction="http://tempuri.org/AddLoanApplicationVendorForMobile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedSurveySME">
+      <soap12:operation soapAction="http://tempuri.org/GetVerifiedSurveySME" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUserDataByBranch">
+      <soap12:operation soapAction="http://tempuri.org/GetAllUserDataByBranch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMasterData">
+      <soap12:operation soapAction="http://tempuri.org/GetMasterData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLoanProductType">
+      <soap12:operation soapAction="http://tempuri.org/GetAllLoanProductType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDisbursementData">
+      <soap12:operation soapAction="http://tempuri.org/GetAllDisbursementData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLoanProductTypeItem">
+      <soap12:operation soapAction="http://tempuri.org/GetAllLoanProductTypeItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMicroLoan">
+      <soap12:operation soapAction="http://tempuri.org/GetAllMicroLoan" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMicroTerm">
+      <soap12:operation soapAction="http://tempuri.org/GetAllMicroTerm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedSurveyTown">
+      <soap12:operation soapAction="http://tempuri.org/GetVerifiedSurveyTown" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedSurveyFarmVillage">
+      <soap12:operation soapAction="http://tempuri.org/GetVerifiedSurveyFarmVillage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedCustRegFarmer">
+      <soap12:operation soapAction="http://tempuri.org/GetVerifiedCustRegFarmer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedCustRegVendor">
+      <soap12:operation soapAction="http://tempuri.org/GetVerifiedCustRegVendor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedLoanAppFarmer">
+      <soap12:operation soapAction="http://tempuri.org/GetVerifiedLoanAppFarmer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerifiedLoanAppVendor">
+      <soap12:operation soapAction="http://tempuri.org/GetVerifiedLoanAppVendor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDataForFingerPrint">
+      <soap12:operation soapAction="http://tempuri.org/GetUserDataForFingerPrint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DesktopLogin">
+      <soap12:operation soapAction="http://tempuri.org/DesktopLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifiedCustomer">
+      <soap12:operation soapAction="http://tempuri.org/VerifiedCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDataForFingerPrint">
+      <soap12:operation soapAction="http://tempuri.org/GetCustomerDataForFingerPrint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserForDesktop">
+      <soap12:operation soapAction="http://tempuri.org/AddUserForDesktop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomerForDesktop">
+      <soap12:operation soapAction="http://tempuri.org/AddCustomerForDesktop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerForDesktop">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCustomerForDesktop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerVerifiedLogin">
+      <soap12:operation soapAction="http://tempuri.org/CustomerVerifiedLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap12:operation soapAction="http://tempuri.org/AddUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddtestData">
+      <soap12:operation soapAction="http://tempuri.org/AddtestData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RouteWebService">
+    <wsdl:port name="RouteWebServiceSoap" binding="tns:RouteWebServiceSoap">
+      <soap:address location="http://192.168.1.111/RouteWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="RouteWebServiceSoap12" binding="tns:RouteWebServiceSoap12">
+      <soap12:address location="http://192.168.1.111/RouteWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

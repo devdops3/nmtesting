@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7772e02b-9062-4806-9cc8-e1b818c054b4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://apitest.myancloud.net/prepaidcard/ResellerService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ResellerService.xsd" MetadataType="Schema" ID="ec5eff62-3794-4f8c-8937-bb2e6ce5a224" SourceId="1" SourceUrl="http://apitest.myancloud.net/prepaidcard/ResellerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ResellerService1.xsd" MetadataType="Schema" ID="f76f280a-42ed-45d6-9f60-a16e5dd5f2ee" SourceId="1" SourceUrl="http://apitest.myancloud.net/prepaidcard/ResellerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ResellerService.wsdl" MetadataType="Wsdl" ID="0eb67760-bd3f-460c-a8da-95dc79bcde2f" SourceId="1" SourceUrl="http://apitest.myancloud.net/prepaidcard/ResellerService.svc?wsdl" />
+    <MetadataFile FileName="ResellerService2.xsd" MetadataType="Schema" ID="cf4971b9-a54c-4ae9-b010-aee4aa1e77cf" SourceId="1" SourceUrl="http://apitest.myancloud.net/prepaidcard/ResellerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ResellerService.disco" MetadataType="Disco" ID="d4792bd0-efde-4b05-9446-d8e7a126089e" SourceId="1" SourceUrl="http://apitest.myancloud.net/prepaidcard/ResellerService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

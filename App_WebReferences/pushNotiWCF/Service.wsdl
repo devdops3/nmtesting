@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:49661/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:49661/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_PushToAndroid_InputMessage">
+    <wsdl:part name="parameters" element="tns:PushToAndroid" />
+  </wsdl:message>
+  <wsdl:message name="IService_PushToAndroid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PushToAndroidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PushToApple_InputMessage">
+    <wsdl:part name="parameters" element="tns:PushToApple" />
+  </wsdl:message>
+  <wsdl:message name="IService_PushToApple_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PushToAppleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_PushToAppleOTP_InputMessage">
+    <wsdl:part name="parameters" element="tns:PushToAppleOTP" />
+  </wsdl:message>
+  <wsdl:message name="IService_PushToAppleOTP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PushToAppleOTPResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="PushToAndroid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PushToAndroid" message="tns:IService_PushToAndroid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PushToAndroidResponse" message="tns:IService_PushToAndroid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PushToApple">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PushToApple" message="tns:IService_PushToApple_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PushToAppleResponse" message="tns:IService_PushToApple_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PushToAppleOTP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/PushToAppleOTP" message="tns:IService_PushToAppleOTP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/PushToAppleOTPResponse" message="tns:IService_PushToAppleOTP_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PushToAndroid">
+      <soap:operation soapAction="http://tempuri.org/IService/PushToAndroid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PushToApple">
+      <soap:operation soapAction="http://tempuri.org/IService/PushToApple" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PushToAppleOTP">
+      <soap:operation soapAction="http://tempuri.org/IService/PushToAppleOTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://localhost:49661/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

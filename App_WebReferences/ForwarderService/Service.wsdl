@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:10533/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:10533/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:10533/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ForwarderService.Interface.Common.CommunictionObjects" />
+      <xsd:import schemaLocation="http://localhost:10533/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ForwarderService.Domain" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_GetAgentUserByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAgentUserByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetAgentUserByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAgentUserByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckIsAuthenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckIsAuthenticate" />
+  </wsdl:message>
+  <wsdl:message name="IService_CheckIsAuthenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckIsAuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IService_InsertTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InitiatePayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitiatePayment" />
+  </wsdl:message>
+  <wsdl:message name="IService_InitiatePayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitiatePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTransactionById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionById" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTransactionById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTransactionByToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionByToken" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTransactionByToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransactionByTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetExistTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExistTransaction" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetExistTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExistTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConfirmPayment_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmPayment" />
+  </wsdl:message>
+  <wsdl:message name="IService_ConfirmPayment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_InitiatePaymentV2_InputMessage">
+    <wsdl:part name="parameters" element="tns:InitiatePaymentV2" />
+  </wsdl:message>
+  <wsdl:message name="IService_InitiatePaymentV2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InitiatePaymentV2Response" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefundV2_B2BInvoices_InputMessage">
+    <wsdl:part name="parameters" element="tns:RefundV2_B2BInvoices" />
+  </wsdl:message>
+  <wsdl:message name="IService_RefundV2_B2BInvoices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RefundV2_B2BInvoicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateB2BInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateB2BInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IService_UpdateB2BInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateB2BInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="GetAgentUserByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetAgentUserByEmail" message="tns:IService_GetAgentUserByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetAgentUserByEmailResponse" message="tns:IService_GetAgentUserByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckIsAuthenticate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/CheckIsAuthenticate" message="tns:IService_CheckIsAuthenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/CheckIsAuthenticateResponse" message="tns:IService_CheckIsAuthenticate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InsertTransaction" message="tns:IService_InsertTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InsertTransactionResponse" message="tns:IService_InsertTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitiatePayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InitiatePayment" message="tns:IService_InitiatePayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InitiatePaymentResponse" message="tns:IService_InitiatePayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateTransaction" message="tns:IService_UpdateTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateTransactionResponse" message="tns:IService_UpdateTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTransactionById" message="tns:IService_GetTransactionById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTransactionByIdResponse" message="tns:IService_GetTransactionById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByToken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTransactionByToken" message="tns:IService_GetTransactionByToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTransactionByTokenResponse" message="tns:IService_GetTransactionByToken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExistTransaction">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetExistTransaction" message="tns:IService_GetExistTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetExistTransactionResponse" message="tns:IService_GetExistTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ConfirmPayment" message="tns:IService_ConfirmPayment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ConfirmPaymentResponse" message="tns:IService_ConfirmPayment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InitiatePaymentV2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/InitiatePaymentV2" message="tns:IService_InitiatePaymentV2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/InitiatePaymentV2Response" message="tns:IService_InitiatePaymentV2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefundV2_B2BInvoices">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RefundV2_B2BInvoices" message="tns:IService_RefundV2_B2BInvoices_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RefundV2_B2BInvoicesResponse" message="tns:IService_RefundV2_B2BInvoices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateB2BInvoice">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/UpdateB2BInvoice" message="tns:IService_UpdateB2BInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/UpdateB2BInvoiceResponse" message="tns:IService_UpdateB2BInvoice_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAgentUserByEmail">
+      <soap:operation soapAction="http://tempuri.org/IService/GetAgentUserByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckIsAuthenticate">
+      <soap:operation soapAction="http://tempuri.org/IService/CheckIsAuthenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTransaction">
+      <soap:operation soapAction="http://tempuri.org/IService/InsertTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitiatePayment">
+      <soap:operation soapAction="http://tempuri.org/IService/InitiatePayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransaction">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionById">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTransactionById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactionByToken">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTransactionByToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExistTransaction">
+      <soap:operation soapAction="http://tempuri.org/IService/GetExistTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmPayment">
+      <soap:operation soapAction="http://tempuri.org/IService/ConfirmPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitiatePaymentV2">
+      <soap:operation soapAction="http://tempuri.org/IService/InitiatePaymentV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefundV2_B2BInvoices">
+      <soap:operation soapAction="http://tempuri.org/IService/RefundV2_B2BInvoices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateB2BInvoice">
+      <soap:operation soapAction="http://tempuri.org/IService/UpdateB2BInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://localhost:10533/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

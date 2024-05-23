@@ -1,0 +1,22 @@
+﻿<ConfirmRes>
+  <Version>1.0</Version>
+  <TimeStamp>201505051037437068</TimeStamp>
+  <MessageID>50602723-b345-4c6f-9252-9450b1c15f9b</MessageID>
+  <ResCode></ResCode>
+  <ResDesc></ResDesc>
+  <Ref1>1</Ref1>
+  <Ref2>Nila</Ref2>
+  <Ref3>095119837</Ref3>
+  <Ref4>51399</Ref4>
+  <Ref5></Ref5>
+  <Ref1Name>Agent Code</Ref1Name>
+  <Ref2Name>Agent Name</Ref2Name>
+  <Ref3Name>Mobile No</Ref3Name>
+  <Ref4Name></Ref4Name>
+  <Ref5Name></Ref5Name>
+  <BatchID>0</BatchID>
+  <Balance>498303</Balance>
+  <TxnID>51399</TxnID>
+  <TodayTxnCount>14</TodayTxnCount>
+  <TodayTxnAmount>28010.00</TodayTxnAmount>
+</ConfirmRes>
