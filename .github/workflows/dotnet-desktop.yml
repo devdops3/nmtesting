@@ -29,7 +29,7 @@ jobs:
 
     - name: Build
       run: dotnet build --configuration Release --no-restore
-      working-directory: website.publishproj 
+      working-directory: D:\a\nmtesting\nmtesting\website.publishproj
 
     - name: Test
       run: dotnet test --no-build --verbosity normal
