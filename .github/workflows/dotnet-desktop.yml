@@ -18,26 +18,26 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v2
 
-     - name: Setup .NET Core
-       uses: actions/setup-dotnet@v1
-       with:
-         dotnet-version: '4.0'
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '4.0'
 
-     - name: Restore dependencies
-       run: dotnet restore
-       working-directory: ./ 
+    - name: Restore dependencies
+      run: dotnet restore
+      working-directory: ./ 
 
-     - name: Build
-       run: dotnet build --configuration Release --no-restore
-       working-directory: ./ 
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+      working-directory: ./ 
 
-     - name: Test
-       run: dotnet test --no-build --verbosity normal
-       working-directory: ./ 
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+      working-directory: ./ 
 
-     - name: Publish
-       run: dotnet publish --configuration Release --output ./publish
-       working-directory: ./
+    - name: Publish
+      run: dotnet publish --configuration Release --output ./publish
+      working-directory: ./
 
     - name: Deploy to IIS
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
