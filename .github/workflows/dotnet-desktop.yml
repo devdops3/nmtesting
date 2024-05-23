@@ -18,25 +18,26 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v2
 
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: '4.0'
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
 
-    - name: Restore dependencies
-      run: dotnet restore
-      working-directory: ./ 
+    - name: Restore NuGet packages
+    #  run: msbuild -t:Restore -p:Configuration=Release YourSolution.sln
+      run: msbuild -t:Restore -p:Configuration=Release website.publishproj
+      working-directory: ./
 
-    - name: Build
-      run: dotnet build --configuration Release --no-restore
-      working-directory: ./website.publishproj 
+    - name: Build Project
+      run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:WebPublishMethod=Package -p:PackageAsSingleFile=true -p:SkipInvalidConfigurations=true website.publishproj
+      working-directory: ./
 
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-      working-directory: ./ 
+    - name: Test Project
+      run: |
+        # Add commands to run tests here, using VSTest or similar
+        echo "Run your tests command here"
+      working-directory: ./
 
-    - name: Publish
-      run: dotnet publish --configuration Release --output ./publish
+    - name: Publish Project
+      run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:PublishProfile=App_Data/PublishProfiles/APNBIS.pubxml website.publishproj
       working-directory: ./
 
     - name: Deploy to IIS
@@ -46,4 +47,4 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         password: ${{ secrets.SERVER_PASSWORD }}
         local-dir: ./
-        server-dir: 'C:\inetpub\wwwroot'
+        server-dir: '/inetpub/wwwroot/'
