@@ -47,4 +47,4 @@ jobs:
         username: ${{ secrets.SERVER_USERNAME }}
         password: ${{ secrets.SERVER_PASSWORD }}
         local-dir: ./
-        server-dir: '/inetpub/wwwroot/'
+        server-dir: 'c:/inetpub/wwwroot/'
