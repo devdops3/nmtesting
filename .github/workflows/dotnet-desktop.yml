@@ -29,6 +29,12 @@ jobs:
       run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:WebPublishMethod=Package -p:PackageAsSingleFile=true -p:OutDir=./PublishOutput website.publishproj
       working-directory: ./
 
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-artifacts
+        path: ./PublishOutput/
+
     - name: Test Project
       run: |
         echo "Run your tests command here"
