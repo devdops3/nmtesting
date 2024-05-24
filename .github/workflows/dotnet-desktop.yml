@@ -42,8 +42,8 @@ jobs:
     - name: Deploy via PowerShell Remoting
       run: |
         $secpasswd = ConvertTo-SecureString "${{ secrets.SERVER_PASSWORD }}" -AsPlainText -Force
-        $creds = New-Object System.Management.Automation.PSCredential ("${{ secrets.SERVER_USER }}", $secpasswd)
-        Invoke-Command -ComputerName ${{ secrets.WINDOWS_SERVER_IP }} -Credential $creds -ScriptBlock {
+        $creds = New-Object System.Management.Automation.PSCredential ("${{ secrets.SERVER_USERNAME }}", $secpasswd)
+        Invoke-Command -ComputerName ${{ secrets.SERVER_ADDRESS }} -Credential $creds -ScriptBlock {
           # Stop IIS to ensure files are not locked
           Stop-Service -Name W3SVC -Force
 
