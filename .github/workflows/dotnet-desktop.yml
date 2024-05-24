@@ -41,26 +41,13 @@ jobs:
       working-directory: ./
 
 
-    - name: Deploy to IIS via WinRM
-      run: |
-        $secpasswd = ConvertTo-SecureString "${{ secrets.SERVER_PASSWORD }}" -AsPlainText -Force
-        $creds = New-Object System.Management.Automation.PSCredential ("${{ secrets.SERVER_USERNAME }}", $secpasswd)
-        $session = New-PSSession -ComputerName ${{ secrets.SERVER_ADDRESS }} -Credential $creds -UseSSL
-        Invoke-Command -Session $session -ScriptBlock {
-          Stop-Service -Name W3SVC
-      # Copy files, potentially using Robocopy or similar tool
-      Start-Service -Name W3SVC
-    }
-        Remove-PSSession -Session $session
-      shell: pwsh
 
-
-      #    - name: Deploy to IIS via SCP
-      #      uses: appleboy/scp-action@master
-      #      with:
-      #        host: ${{ secrets.SERVER_ADDRESS }}
-      #        username: ${{ secrets.SERVER_USERNAME }}
-      #        key: ${{ secrets.SERVER_PASSWORD }}
-      #        port: 22
-      #        source: "./PublishOutput/*"  # Specify the path to your build output
-      #        target: "c:/inetpub/wwwroot/"
+    - name: Deploy to IIS via SCP
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.SERVER_ADDRESS }}
+        username: ${{ secrets.SERVER_USERNAME }}
+        key: ${{ secrets.SERVER_PASSWORD }}
+        port: 22
+        source: "./PublishOutput/*"  # Specify the path to your build output
+        target: "c:/inetpub/wwwroot/"
