@@ -1,0 +1,26 @@
+version: 0.0
+os: windows
+files:
+  - source: ./PublishOutput
+    destination: C:\inetpub\wwwroot\
+
+hooks:
+  BeforeInstall:
+    - location: scripts/stop_iis.ps1
+      timeout: 60
+      runas: administrator
+
+  AfterInstall:
+    - location: scripts/update_configurations.ps1
+      timeout: 120
+      runas: administrator
+
+  ApplicationStart:
+    - location: scripts/start_iis.ps1
+      timeout: 60
+      runas: administrator
+
+  ValidateService:
+    - location: scripts/validate_service.ps1
+      timeout: 60
+      runas: administrator

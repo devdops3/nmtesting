@@ -1,0 +1,77 @@
+name: .NET CI/CD Pipeline to IIS
+
+on:
+  push:
+    branches:
+      - main
+      - feature/*
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Restore NuGet packages
+      run: msbuild -t:Restore -p:Configuration=Release website.publishproj
+      working-directory: ./
+
+    - name: Build Project
+      run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:WebPublishMethod=Package -p:PackageAsSingleFile=true -p:OutDir=./PublishOutput website.publishproj
+      working-directory: ./
+
+    - name: Test Project
+      run: |
+        echo "Run your tests command here"
+        # Example: vstest.console.exe ./Tests/bin/Release/YourTests.dll
+      working-directory: ./
+
+    - name: Publish Project
+      run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:PublishProfile=App_Data/PublishProfiles/APNBIS.pubxml -p:OutDir=./PublishOutput website.publishproj
+      working-directory: ./
+
+    - name: Deploy via PowerShell Remoting
+      run: |
+        $secpasswd = ConvertTo-SecureString "${{ secrets.SERVER_PASSWORD }}" -AsPlainText -Force
+        $creds = New-Object System.Management.Automation.PSCredential ("${{ secrets.SERVER_USERNAME }}", $secpasswd)
+        Invoke-Command -ComputerName ${{ secrets.SERVER_ADDRESS }} -Credential $creds -ScriptBlock {
+          # Stop IIS to ensure files are not locked
+          Stop-Service -Name W3SVC -Force
+
+          # Backup current wwwroot directory to D:\backup with timestamp
+          #$date = Get-Date -Format "yyyyMMddHHmmss"
+          #$backupPath = "D:\backup\wwwroot_$date"
+          #Write-Output "Backing up wwwroot to $backupPath..."
+          #New-Item -Path $backupPath -Type Directory -Force
+          #Copy-Item -Path "C:\inetpub\wwwroot\*" -Destination $backupPath -Recurse -Force
+
+          # Optional: Remove old files from wwwroot if necessary
+          #Write-Output "Removing old files from wwwroot..."
+          #Remove-Item -Path "C:\inetpub\wwwroot\*" -Recurse -Force
+
+          # Copy new files from build output directory to wwwroot
+          # This path needs to be correctly mapped and accessible from the GitHub Actions runner or a network share
+          Write-Output "Copying new files to wwwroot..."
+          Copy-Item -Path "./PublishOutput/*" -Destination "C:\inetpub\wwwroot" -Recurse -Force
+
+          # Start IIS
+          Start-Service -Name W3SVC
+          Write-Output "Deployment completed and IIS started."
+        }
+      #    - name: Deploy to IIS via FTP
+      #      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      #      with:
+      #        server: ${{ secrets.SERVER_ADDRESS }}
+      #        username: ${{ secrets.SERVER_USERNAME }}
+      #        password: ${{ secrets.SERVER_PASSWORD }}
+      #        local-dir: ./PublishOutput/  # Only deploy the build artifacts
+      #        server-dir: '/inetpub/wwwroot/'  # Correct Windows server path syntax
