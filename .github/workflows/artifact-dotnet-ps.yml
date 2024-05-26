@@ -26,19 +26,13 @@ jobs:
       working-directory: ./
 
     - name: Build Project
-      run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:WebPublishMethod=Package -p:PackageAsSingleFile=true -p:SkipInvalidConfigurations=true website.publishproj
+      run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:WebPublishMethod=Package -p:PackageAsSingleFile=true -p:SkipInvalidConfigurations=true -p:PackageLocation=./artifact website.publishproj
       working-directory: ./
 
     - name: Test Project
       run: |
         # Replace with the actual command to run your tests, e.g., using dotnet test
         echo "Run your tests command here"
-      working-directory: ./
-
-    - name: Create Artifact
-      run: |
-        mkdir artifact
-        Copy-Item -Path '$(Get-Item website.publishproj -p:PackageAsSingleFile=true -p:SkipInvalidConfigurations=true -p:Configuration=Release -p:WebPublishMethod=Package -p:PackageLocation=artifact)' -Destination 'artifact'
       working-directory: ./
 
     - name: Upload Artifact
