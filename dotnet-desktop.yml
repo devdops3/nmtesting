@@ -41,10 +41,11 @@ jobs:
       working-directory: ./
 
     - name: Deploy to IIS
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      uses: c0c1/scp-action@v1.0 
       with:
-        server: ${{ secrets.SERVER_ADDRESS }}
-        username: ${{ secrets.SERVER_USERNAME }}
+        host: ${{ secrets.SERVER_ADDRESS }}
+        user: ${{ secrets.SERVER_USERNAME }}
         password: ${{ secrets.SERVER_PASSWORD }}
-        local-dir: ./
-        server-dir: 'c:/inetpub/wwwroot/'
+        port: 22
+        src: ./
+        remote: 'c:/inetpub/wwwroot/'

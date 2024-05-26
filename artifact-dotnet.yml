@@ -22,7 +22,6 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
 
     - name: Restore NuGet packages
-    #  run: msbuild -t:Restore -p:Configuration=Release YourSolution.sln
       run: msbuild -t:Restore -p:Configuration=Release website.publishproj
       working-directory: ./
 
@@ -32,20 +31,28 @@ jobs:
 
     - name: Test Project
       run: |
-        # Add commands to run tests here, using VSTest or similar
+        # Replace with the actual command to run your tests, e.g., using dotnet test
         echo "Run your tests command here"
       working-directory: ./
 
-    - name: Publish Project
-      run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:PublishProfile=App_Data/PublishProfiles/APNBIS.pubxml website.publishproj
+    - name: Create Artifact
+      run: |
+        mkdir artifact
+        Copy-Item -Path '$(Get-Item website.publishproj -p:PackageAsSingleFile=true -p:SkipInvalidConfigurations=true -p:Configuration=Release -p:WebPublishMethod=Package -p:PackageLocation=artifact)' -Destination 'artifact'
       working-directory: ./
 
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-artifact
+        path: artifact
+
     - name: Deploy to IIS
-      uses: c0c1/scp-action@v1.0 
+      uses: appleboy/scp-action@v0.1.2
       with:
         host: ${{ secrets.SERVER_ADDRESS }}
-        user: ${{ secrets.SERVER_USERNAME }}
+        username: ${{ secrets.SERVER_USERNAME }}
         password: ${{ secrets.SERVER_PASSWORD }}
         port: 22
-        src: ./
-        remote: 'c:/inetpub/wwwroot/'
+        source: ./artifact/*
+        target: 'c:/inetpub/wwwroot/'
