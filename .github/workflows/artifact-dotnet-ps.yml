@@ -46,11 +46,11 @@ jobs:
         $username = $env:SERVER_USERNAME
         $password = $env:SERVER_PASSWORD | ConvertTo-SecureString -AsPlainText -Force
         $credential = New-Object System.Management.Automation.PSCredential ($username, $password)
-        $session = New-PSSession -HostName $env:SERVER_ADDRESS -UserName $username -Credential $credential -Port 22
+        $session = New-PSSession -ComputerName $env:SERVER_ADDRESS -Credential $credential -Authentication Basic
         Copy-Item -Path artifact/* -Destination 'c:/inetpub/wwwroot/' -ToSession $session
+        Remove-PSSession -Session $session
       shell: pwsh
       env:
         SERVER_ADDRESS: ${{ secrets.SERVER_ADDRESS }}
         SERVER_USERNAME: ${{ secrets.SERVER_USERNAME }}
         SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
-
