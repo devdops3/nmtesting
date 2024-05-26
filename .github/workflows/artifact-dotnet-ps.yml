@@ -38,7 +38,7 @@ jobs:
     - name: Create Artifact
       run: |
         mkdir artifact
-        Copy-Item -Path '$(Get-Item ./website.publishproj -p:PackageAsSingleFile=true -p:SkipInvalidConfigurations=true -p:Configuration=Release -p:WebPublishMethod=Package -p:PackageLocation=artifact)' -Destination 'artifact'
+        Copy-Item -Path '$(Get-Item website.publishproj -p:PackageAsSingleFile=true -p:SkipInvalidConfigurations=true -p:Configuration=Release -p:WebPublishMethod=Package -p:PackageLocation=artifact)' -Destination 'artifact'
       working-directory: ./
 
     - name: Upload Artifact
