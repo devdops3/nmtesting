@@ -53,3 +53,4 @@ jobs:
         SERVER_ADDRESS: ${{ secrets.SERVER_ADDRESS }}
         SERVER_USERNAME: ${{ secrets.SERVER_USERNAME }}
         SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+
