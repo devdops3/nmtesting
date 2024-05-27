@@ -24,7 +24,12 @@ jobs:
       run: msbuild -t:Restore -p:Configuration=Release ./bis/website.publishproj
 
     - name: Build Project
-      run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:WebPublishMethod=Package -p:PackageAsSingleFile=true -p:SkipInvalidConfigurations=true ./bis/website.publishproj
+      run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:WebPublishMethod=Package -p:PackageAsSingleFile=true -p:SkipInvalidConfigurations=true -p:OutputPath=.PublishOutput ./bis/website.publishproj
+
+
+    - name: List output directory
+      run: ls -la ./PublishOutput
+      shell: pwsh
 
     - name: Test Project
       run: |
@@ -39,7 +44,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: build-artifacts-01
-        path: ./PublishOutput
+        path: ./PublishOutput/**
 
         #    - name: Deploy to AWS Windows Instance via SCP
         #      run: |
