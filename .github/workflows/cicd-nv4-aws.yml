@@ -27,21 +27,21 @@ jobs:
     - name: Build the solution
       run: msbuild /p:Configuration=Release /p:Platform="Any CPU" ./bis/website.publishproj
 
-      #    - name: Test the project (if applicable)
-      #      run: |
-        # Add your testing commands here
-        # Example: "msbuild /t:VSTest YourTestProject.csproj"
+    - name: Test the project (if applicable)
+      run: |
+            Add your testing commands here
+            # Example: "msbuild /t:VSTest YourTestProject.csproj"
         echo "Placeholder for test commands"
 
-        #    - name: Publish the project
-        #      run: |
-        #        # Example publish command
-        #        msbuild /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:OutDir=./PublishOutput /p:Platform="Any CPU" ./bis/website.publishproj
-        #
-        #    - name: Deploy to AWS Windows Instance via SCP
-        #      run: |
-        #        choco install openssh -y  # Install SSH client if not present
-        #        scp -i ${{ secrets.SSH_PRIVATE_KEY_PATH }} -P 22 -o StrictHostKeyChecking=no ./PublishOutput/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/inetpub/wwwroot/
+    - name: Publish the project
+      run: |
+       # Example publish command
+       msbuild /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:OutDir=./PublishOutput /p:Platform="Any CPU" ./bis/website.publishproj
+
+    - name: Deploy to AWS Windows Instance via SCP
+      run: |
+       choco install openssh -y  # Install SSH client if not present
+       scp -i ${{ secrets.SSH_PRIVATE_KEY_PATH }} -P 22 -o StrictHostKeyChecking=no ./PublishOutput/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/inetpub/wwwroot/
         #      shell: pwsh
         #      env:
         #        SSH_PRIVATE_KEY_PATH: ${{ secrets.SSH_PRIVATE_KEY }}
