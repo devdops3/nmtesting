@@ -38,21 +38,21 @@ jobs:
         # Example publish command
         msbuild /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:OutDir=./PublishOutput /p:Platform="Any CPU" ./bis/website.publishproj 
 
-        #    - name: Deploy to AWS Windows Instance via SCP
-        #      run: |
-        #        choco install openssh -y  # Install SSH client if not present
-        #        scp -i ${{ secrets.SSH_PRIVATE_KEY_PATH }} -P 22 -o StrictHostKeyChecking=no ./PublishOutput/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/inetpub/wwwroot/
-        #      shell: pwsh
-        #      env:
-        #        SSH_PRIVATE_KEY_PATH: ${{ secrets.SSH_PRIVATE_KEY }}
-        #        USERNAME: ${{ secrets.SERVER_USERNAME }}
-        #        HOST: ${{ secrets.SERVER_ADDRESS }}
-        #
-        #    - name: Restart IIS to apply changes
-        #      run: |
-        #        ssh -i ${{ secrets.SSH_PRIVATE_KEY_PATH }} -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} "iisreset"
-        #      shell: pwsh
-        #      env:
-        #        SSH_PRIVATE_KEY_PATH: ${{ secrets.SSH_PRIVATE_KEY }}
-        #        USERNAME: ${{ secrets.SERVER_USERNAME }}
-        #        HOST: ${{ secrets.SERVER_ADDRESS }}
+    - name: Deploy to AWS Windows Instance via SCP
+      run: |
+       choco install openssh -y  # Install SSH client if not present
+       scp -i ${{ secrets.SSH_PRIVATE_KEY_PATH }} -P 22 -o StrictHostKeyChecking=no ./PublishOutput/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/inetpub/wwwroot/
+     shell: pwsh
+     env:
+       SSH_PRIVATE_KEY_PATH: ${{ secrets.SSH_PRIVATE_KEY }}
+       USERNAME: ${{ secrets.SERVER_USERNAME }}
+       HOST: ${{ secrets.SERVER_ADDRESS }}
+
+    - name: Restart IIS to apply changes
+      run: |
+       ssh -i ${{ secrets.SSH_PRIVATE_KEY_PATH }} -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} "iisreset"
+     shell: pwsh
+     env:
+       SSH_PRIVATE_KEY_PATH: ${{ secrets.SSH_PRIVATE_KEY }}
+       USERNAME: ${{ secrets.SERVER_USERNAME }}
+       HOST: ${{ secrets.SERVER_ADDRESS }}
