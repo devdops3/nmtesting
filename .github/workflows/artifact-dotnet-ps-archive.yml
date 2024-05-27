@@ -23,17 +23,17 @@ jobs:
 
     - name: Restore NuGet packages
       run: msbuild -t:Restore -p:Configuration=Release ./bis/website.publishproj
-      working-directory: ./bis/
+      working-directory: ./
 
     - name: Build Project
       run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:WebPublishMethod=Package -p:PackageAsSingleFile=true -p:SkipInvalidConfigurations=true -p:PackageLocation=./artifact ./bis/website.publishproj
-      working-directory: ./bis/
+      working-directory: ./
 
     - name: Test Project
       run: |
         # Replace with the actual command to run your tests, e.g., using dotnet test
         echo "Run your tests command here"
-      working-directory: ./bis/
+      working-directory: ./
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
