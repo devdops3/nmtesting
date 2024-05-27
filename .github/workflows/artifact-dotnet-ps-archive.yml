@@ -46,9 +46,9 @@ jobs:
         choco install openssh
       shell: pwsh
 
-    - name: Compress Artifacts
-      run: Compress-Archive -Path ./artifact/* -DestinationPath ./artifact/artifact.zip
-      shell: pwsh
+      #    - name: Compress Artifacts
+      #      run: Compress-Archive -Path ./artifact/* -DestinationPath ./artifact/artifact.zip
+      #      shell: pwsh
 
 
     - name: Deploy to IIS
@@ -64,7 +64,7 @@ jobs:
         Invoke-Command -Session $session -ScriptBlock {
           param ($srcPath, $destPath)
           Copy-Item -Path $srcPath -Destination $destPath -Recurse
-        } -ArgumentList ('./artifact/artifact.zip', 'c:/inetpub/wwwroot/')
+        } -ArgumentList ('./build-artifact.zip', 'c:/inetpub/wwwroot/')
 
         # Remove the session
         Remove-PSSession -Session $session
