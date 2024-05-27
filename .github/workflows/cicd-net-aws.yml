@@ -38,6 +38,14 @@ jobs:
         # Example publish command
         msbuild /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:OutDir=./PublishOutput /p:Platform="Any CPU" ./bis/website.publishproj 
 
+
+    - name: Upload Artifact 
+      uses: action/upload-artifact@v2
+      with:
+        name: build-artifact-test01
+        path: ./PublishOutput
+
     - name: Deploy to AWS Windows Instance via SCP
       run: |
         choco install openssh -y  # Install SSH client if not present
+
