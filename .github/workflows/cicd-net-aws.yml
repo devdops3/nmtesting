@@ -41,9 +41,3 @@ jobs:
     - name: Deploy to AWS Windows Instance via SCP
       run: |
         choco install openssh -y  # Install SSH client if not present
-        scp -i ${{ secrets.SSH_PRIVATE_KEY_PATH }} -P 22 -o StrictHostKeyChecking=no ./PublishOutput/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:/inetpub/wwwroot/
-      shell: pwsh
-      env:
-        SSH_PRIVATE_KEY_PATH: ${{ secrets.SSH_PRIVATE_KEY }}
-        USERNAME: ${{ secrets.SERVER_USERNAME }}
-        HOST: ${{ secrets.SERVER_ADDRESS }}
