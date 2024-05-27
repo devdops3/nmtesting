@@ -38,8 +38,8 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: build-artifact-test
-        path: ./artifact
+        name: build-artifact-test01
+        path: ./bis/artifact
 
     - name: Install SSH Client
       run: |
