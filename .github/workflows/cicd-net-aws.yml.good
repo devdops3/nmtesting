@@ -19,25 +19,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v2  # This action sets up MSBuild environment
-
-    - name: Build app for release
-      run: msbuild  ./bis/website.publishproj -t:rebuild -verbosity:diag -property:Configuration=Release
-
-    - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v2
-      with:
-        vs-version: '[11.0,12)'
-
-    - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v2
-      with:
-        vs-prerelease: true
-
-    - name: Add msbuild to PATH
-      uses: microsoft/setup-msbuild@v2
-      with:
-        msbuild-architecture: x64
+      uses: microsoft/setup-msbuild@v1.0.2  # This action sets up MSBuild environment
 
     - name: Restore NuGet packages
       run: msbuild -t:Restore ./bis/website.publishproj
