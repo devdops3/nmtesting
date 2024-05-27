@@ -27,9 +27,9 @@ jobs:
       run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:WebPublishMethod=Package -p:PackageAsSingleFile=true -p:SkipInvalidConfigurations=true -p:OutputPath=.PublishOutput ./bis/website.publishproj
 
 
-    - name: List output directory
-      run: ls -la ./PublishOutput
-      shell: pwsh
+      #    - name: List output directory
+      #      run: ls -la ./PublishOutput
+      #      shell: pwsh
 
     - name: Test Project
       run: |
