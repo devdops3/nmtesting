@@ -46,24 +46,24 @@ jobs:
         choco install openssh
       shell: pwsh
 
-      #    - name: Deploy to IIS
-      #      run: |
-      #        $username = $env:SERVER_USERNAME
-      #        $password = $env:SERVER_PASSWORD | ConvertTo-SecureString -AsPlainText -Force
-      #        $credential = New-Object System.Management.Automation.PSCredential ($username, $password)
-      #        
-      #        # Create a new SSH session
-      #        $session = New-PSSession -HostName $env:SERVER_ADDRESS -UserName $username -SSHTransport
-      #        
-      #        # Copy files to the remote IIS server
-      #        Invoke-Command -Session $session -ScriptBlock {
-      #          param ($srcPath, $destPath)
-      #          Copy-Item -Path $srcPath -Destination $destPath -Recurse
-      #        } -ArgumentList ('./artifact/*', 'c:/inetpub/wwwroot/')
-      #        
-      #        # Remove the session
-      #        Remove-PSSession -Session $session
-      #      shell: pwsh
+    - name: Deploy to IIS
+      run: |
+        $username = $env:SERVER_USERNAME
+        $password = $env:SERVER_PASSWORD | ConvertTo-SecureString -AsPlainText -Force
+        $credential = New-Object System.Management.Automation.PSCredential ($username, $password)
+        
+        # Create a new SSH session
+        $session = New-PSSession -HostName $env:SERVER_ADDRESS -UserName $username -SSHTransport
+        
+        # Copy files to the remote IIS server
+        Invoke-Command -Session $session -ScriptBlock {
+          param ($srcPath, $destPath)
+          Copy-Item -Path $srcPath -Destination $destPath -Recurse
+        } -ArgumentList ('./artifact/*', 'c:/inetpub/wwwroot/')
+        
+        # Remove the session
+        Remove-PSSession -Session $session
+      shell: pwsh
       env:
         SERVER_ADDRESS: ${{ secrets.SERVER_ADDRESS }}
         SERVER_USERNAME: ${{ secrets.SERVER_USERNAME }}
