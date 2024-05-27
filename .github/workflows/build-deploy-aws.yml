@@ -37,7 +37,7 @@ jobs:
         echo "Run your tests command here"
 
     - name: Publish Project
-      run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:PublishProfile=App_Data/PublishProfiles/APNBIS.pubxml ./bis/website.publishproj
+      run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:PublishProfile=App_Data/PublishProfiles/poelay.pubxml ./bis/website.publishproj
 
 
     - name: Upload Build Artifacts
