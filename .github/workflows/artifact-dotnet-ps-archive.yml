@@ -22,11 +22,11 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.2
 
     - name: Restore NuGet packages
-      run: msbuild -t:Restore -p:Configuration=Release ./bis/website.publishproj
+      run: msbuild -t:Restore -p:Configuration=Release /bis/website.publishproj
       working-directory: ./bis/
 
     - name: Build Project
-      run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:WebPublishMethod=Package -p:PackageAsSingleFile=true -p:SkipInvalidConfigurations=true -p:PackageLocation=./artifact ./bis/website.publishproj
+      run: msbuild -p:Configuration=Release -p:DeployOnBuild=true -p:WebPublishMethod=Package -p:PackageAsSingleFile=true -p:SkipInvalidConfigurations=true -p:PackageLocation=./artifact /bis/website.publishproj
       working-directory: ./bis/
 
     - name: Test Project
