@@ -33,11 +33,11 @@ jobs:
         # Example: "msbuild /t:VSTest YourTestProject.csproj"
         echo "Placeholder for test commands"
 
-    - name: Publish the project
-      run: |
-        # Example publish command
-        msbuild /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:OutDir=./PublishOutput /p:Platform="Any CPU" ./bis/website.publishproj
-
+        #    - name: Publish the project
+        #      run: |
+        #        # Example publish command
+        #        msbuild /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:OutDir=./PublishOutput /p:Platform="Any CPU" ./bis/website.publishproj
+        #
         #    - name: Deploy to AWS Windows Instance via SCP
         #      run: |
         #        choco install openssh -y  # Install SSH client if not present
